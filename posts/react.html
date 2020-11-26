@@ -1,0 +1,2690 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="React-初识详解, frank_lee,itsfrank_lee,hexo,html,css,javascript,jquery,React,Vue,nodeJs,H5,前端,博客,番茄鱼啊">
+    <meta name="description" content="本站主要分享H5前端知识和笔记，博客搭建技巧，人生长谈，风花雪月之事。欢迎各位来访互相学习！奥利给啊！！！">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="baidu-site-verification" content="code-8VjAnGhv8m">
+    <meta name="google-site-verification" content="An02eAw6rCWBVutF85tRr02GvZox5D4Pqd9PKFRzvBs">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>React-初识详解 | itsfrank_lee</title>
+    
+
+    <link rel="stylesheet" type="text/css" href="../libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="../libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="../libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="../libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="../libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="../css/matery.css">
+    <link rel="stylesheet" type="text/css" href="../css/my.css">
+    <link type='text/css' rel="stylesheet" href="../npm/font-awesome@4.7.0/css/font-awesome.min.css">
+    
+    <script src="../libs/jquery/jquery.min.js"></script>
+    <script>
+        (function(){
+            var bp = document.createElement('script');
+            var curProtocol = window.location.protocol.split(':')[0];
+            if (curProtocol === 'https'){
+           bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+          }
+          else{
+          bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+          }
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(bp, s);
+        })();
+        </script>
+        
+<meta name="generator" content="Hexo 5.0.2">
+<link rel="stylesheet" href="../css/prism-tomorrow.css" type="text/css"></head>
+
+
+<body>
+    <script>
+        if (localStorage.getItem('dark') === '1') {
+        document.body.classList.add('dark');
+        }
+        //  else if (new Date().getHours() >= 22 || new Date().getHours() < 7) {
+        // document.body.classList.add('dark');
+        // } 
+        else if (matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+        }
+    </script>
+    <a onclick="switchNightMode()" id="sma">
+        <i class="fa fa-moon-o" id="nightMode" aria-hidden="true"></i>
+    </a>
+    
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="../index.html" class="waves-effect waves-light">
+                    
+                    <img src="../medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">itsfrank_lee</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="../index.html" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="../categories/index.html" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="javascript:;" class="waves-effect waves-light">
+
+      
+      <span>归档</span>
+      <i class="fas fa-chevron-down" aria-hidden="true" style="zoom: 0.6;"></i>
+    </a>
+    <ul class="sub-nav menus_item_child ">
+      
+      <li>
+        <a href="../tags/index.html">
+          
+          <span>标签</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="../archives/index.html">
+          
+          <span>日历</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="../count/index.html">
+          
+          <span>统计</span>
+        </a>
+      </li>
+      
+    </ul>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="../about/index.html" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="javascript:;" class="waves-effect waves-light">
+
+      
+      <span>清单</span>
+      <i class="fas fa-chevron-down" aria-hidden="true" style="zoom: 0.6;"></i>
+    </a>
+    <ul class="sub-nav menus_item_child ">
+      
+      <li>
+        <a href="../videos/index.html">
+          
+          <span>vlog</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="../musics/index.html">
+          
+          <span>music</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="../gallery/index.html">
+          
+          <span>相册</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="../essay/index.html">
+          
+          <span>随笔</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="../tiktok/index.html">
+          
+          <span>tiktok</span>
+        </a>
+      </li>
+      
+    </ul>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="../shuoshuo/index.html" class="waves-effect waves-light">
+      
+      <span>说说</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="../contact/index.html" class="waves-effect waves-light">
+      
+      <span>留言板</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="javascript:;" class="waves-effect waves-light">
+
+      
+      <span>链接库</span>
+      <i class="fas fa-chevron-down" aria-hidden="true" style="zoom: 0.6;"></i>
+    </a>
+    <ul class="sub-nav menus_item_child ">
+      
+      <li>
+        <a href="../friends/index.html">
+          
+          <span>友情链接</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="../collection/index.html">
+          
+          <span>网址收藏</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="../sitenavigation/index.html">
+          
+          <span>网址导航</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="../tenfour/homepage/index.html">
+          
+          <span>TenFour</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="../olympus/index.html">
+          
+          <span>奥林巴斯</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="../lakers-championship/index.html">
+          
+          <span>湖人总冠军</span>
+        </a>
+      </li>
+      
+    </ul>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="javascript:;" class="waves-effect waves-light">
+
+      
+      <span>实验室</span>
+      <i class="fas fa-chevron-down" aria-hidden="true" style="zoom: 0.6;"></i>
+    </a>
+    <ul class="sub-nav menus_item_child ">
+      
+      <li>
+        <a href="../demolist/index.html">
+          
+          <span>demolist</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="../hotreview/index.html">
+          
+          <span>hotreview</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="../todolist/index.html">
+          
+          <span>todolist</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="../ticktack/index.html">
+          
+          <span>ticktack</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="../chromedragon/index.html">
+          
+          <span>chromedragon</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="../vote/index.html">
+          
+          <span>opensourcevote</span>
+        </a>
+      </li>
+      
+    </ul>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="../medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">itsfrank_lee</div>
+        <div class="logo-desc">
+            
+            本站主要分享H5前端知识和笔记，博客搭建技巧，人生长谈，风花雪月之事。欢迎各位来访互相学习！奥利给啊！！！
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="../index.html" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="../categories/index.html" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="javascript:;">
+			
+				<i class="fas fa-fw"></i>
+			
+			归档
+			<span class="m-icon"><i class="fas fa-chevron-right"></i></span>
+		</a>
+            <ul style="background:  ;">
+              
+                <li>
+
+                  <a href="../tags/index.html" style="margin-left:75px">
+				  
+		          <span>标签</span>
+                  </a>
+                </li>
+              
+                <li>
+
+                  <a href="../archives/index.html" style="margin-left:75px">
+				  
+		          <span>日历</span>
+                  </a>
+                </li>
+              
+                <li>
+
+                  <a href="../count/index.html" style="margin-left:75px">
+				  
+		          <span>统计</span>
+                  </a>
+                </li>
+              
+            </ul>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="../about/index.html" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="javascript:;">
+			
+				<i class="fas fa-fw"></i>
+			
+			清单
+			<span class="m-icon"><i class="fas fa-chevron-right"></i></span>
+		</a>
+            <ul style="background:  ;">
+              
+                <li>
+
+                  <a href="../videos/index.html" style="margin-left:75px">
+				  
+		          <span>vlog</span>
+                  </a>
+                </li>
+              
+                <li>
+
+                  <a href="../musics/index.html" style="margin-left:75px">
+				  
+		          <span>music</span>
+                  </a>
+                </li>
+              
+                <li>
+
+                  <a href="../gallery/index.html" style="margin-left:75px">
+				  
+		          <span>相册</span>
+                  </a>
+                </li>
+              
+                <li>
+
+                  <a href="../essay/index.html" style="margin-left:75px">
+				  
+		          <span>随笔</span>
+                  </a>
+                </li>
+              
+                <li>
+
+                  <a href="../tiktok/index.html" style="margin-left:75px">
+				  
+		          <span>tiktok</span>
+                  </a>
+                </li>
+              
+            </ul>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="../shuoshuo/index.html" class="waves-effect waves-light">
+			
+				<i class="fas fa-fw"></i>
+			
+			说说
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="../contact/index.html" class="waves-effect waves-light">
+			
+				<i class="fas fa-fw"></i>
+			
+			留言板
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="javascript:;">
+			
+				<i class="fas fa-fw"></i>
+			
+			链接库
+			<span class="m-icon"><i class="fas fa-chevron-right"></i></span>
+		</a>
+            <ul style="background:  ;">
+              
+                <li>
+
+                  <a href="../friends/index.html" style="margin-left:75px">
+				  
+		          <span>友情链接</span>
+                  </a>
+                </li>
+              
+                <li>
+
+                  <a href="../collection/index.html" style="margin-left:75px">
+				  
+		          <span>网址收藏</span>
+                  </a>
+                </li>
+              
+                <li>
+
+                  <a href="../sitenavigation/index.html" style="margin-left:75px">
+				  
+		          <span>网址导航</span>
+                  </a>
+                </li>
+              
+                <li>
+
+                  <a href="../tenfour/homepage/index.html" style="margin-left:75px">
+				  
+		          <span>TenFour</span>
+                  </a>
+                </li>
+              
+                <li>
+
+                  <a href="../olympus/index.html" style="margin-left:75px">
+				  
+		          <span>奥林巴斯</span>
+                  </a>
+                </li>
+              
+                <li>
+
+                  <a href="../lakers-championship/index.html" style="margin-left:75px">
+				  
+		          <span>湖人总冠军</span>
+                  </a>
+                </li>
+              
+            </ul>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="javascript:;">
+			
+				<i class="fas fa-fw"></i>
+			
+			实验室
+			<span class="m-icon"><i class="fas fa-chevron-right"></i></span>
+		</a>
+            <ul style="background:  ;">
+              
+                <li>
+
+                  <a href="../demolist/index.html" style="margin-left:75px">
+				  
+		          <span>demolist</span>
+                  </a>
+                </li>
+              
+                <li>
+
+                  <a href="../hotreview/index.html" style="margin-left:75px">
+				  
+		          <span>hotreview</span>
+                  </a>
+                </li>
+              
+                <li>
+
+                  <a href="../todolist/index.html" style="margin-left:75px">
+				  
+		          <span>todolist</span>
+                  </a>
+                </li>
+              
+                <li>
+
+                  <a href="../ticktack/index.html" style="margin-left:75px">
+				  
+		          <span>ticktack</span>
+                  </a>
+                </li>
+              
+                <li>
+
+                  <a href="../chromedragon/index.html" style="margin-left:75px">
+				  
+		          <span>chromedragon</span>
+                  </a>
+                </li>
+              
+                <li>
+
+                  <a href="../vote/index.html" style="margin-left:75px">
+				  
+		          <span>opensourcevote</span>
+                  </a>
+                </li>
+              
+            </ul>
+          
+        </li>
+        
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('../2020/11/05/de4c3fa0c9a88.png')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">React-初识详解</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+    
+    <link rel="stylesheet" href="../libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        margin: 35px 0 15px 0;
+        padding-left: 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        height: calc(100vh - 250px);
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+
+        position: absolute;
+        right: 23.5vw;
+        display: block;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+    .suibis[data-spmid="随笔"] {
+        width: 100%!important;
+    }
+    .toc-widget[data-spmid="随笔"],
+    #floating-toc-btn[data-spmid="随笔"]
+    {
+        display: none!important;
+    }
+     
+</style>
+<div class="row">
+    
+    
+        <div id="main-content" class="col s12 m12 l9 suibis" data-spmid="React初识">
+            <style>
+    .ititle {
+        margin: 15px 0;
+        text-align:center;
+        font-family: 'Architects Daughter', cursive;
+    }
+    .ipage {
+        line-height: 30px;
+        margin: 0 auto;
+        padding: 15px 32px 29px;
+        background-color: #f9f9f9;
+        box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.26);
+        -moz-border-radius-bottomleft: 20px 500px;
+        -moz-border-radius-bottomright: 500px 30px;
+        -moz-border-radius-topright: 5px 100px;	
+        -webkit-border-bottom-left-radius: 20px 500px;
+        -webkit-border-bottom-right-radius: 64px 10px;
+        -webkit-border-top-right-radius: 5px 100px;    
+        border-bottom-left-radius: 20px 500px;
+        border-bottom-right-radius: 64px 10px;
+        border-top-right-radius: 5px 100px;           
+        -webkit-background-size: 100% 30px;
+        -moz-box-shadow: 0 2px 10px 1px rgba(0, 0, 0, 0.2);
+        -webkit-box-shadow: 0 2px 10px 1px rgba(0, 0, 0, 0.2);
+        text-shadow: 0 1px 0 #F6EF97;
+        position: relative;
+    }
+.izhengwen {
+    position: relative;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    height: auto;
+    background: repeating-linear-gradient(to bottom, #f9f9f9, #f9f9f9 31px, #6BA2D8 1px, #f9f9f9);
+    background-size: 100% 32px;
+}
+#articleContent p {
+    margin: 0
+}
+.ititle {
+    font-family: 'Architects Daughter', cursive;
+    font-size: 1.45rem!important;
+    padding: 10px auto;
+}
+.izhengwen p {
+    position: relative;
+    line-height: 2.2rem!important;
+    text-indent: 2em;
+    font-family: 'Architects Daughter', cursive!important;
+    font-size: 1.45rem!important;
+}
+.ipage::before {
+    content: " ";
+    display: inline-block;
+    position: absolute;
+    top: 0px;
+    bottom: 0;
+    right: 52px;
+    z-index: 4;
+    width: 4px;
+    height: 100%;
+    border-left: 1px solid #fca1a1;
+}
+.izhengwen p:nth-child(odd):before {
+    content: " ";
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    left: -16px;
+    z-index: 3;
+    width: 24px;
+    height: 24px;
+    background-color: #fff;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    box-shadow: inset 0px 2px 5px 0px rgba(0, 0, 0, 0.26);
+}
+.ipage:after {
+    content: " ";
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 52px;
+    z-index: 3;
+    width: 4px;
+    height: 100%;
+    border-left: 4px double #fca1a1;
+}
+.ipage p {
+    padding: 0 2em;
+    color: #333!important;
+}
+body.dark .ipage {
+    opacity: 0.85;
+}
+/*小屏幕下(手机类)的样式*/
+@media only screen and (max-width: 600px) {
+    .ipage {
+        padding: 15px 23px 29px;
+    }
+    .ipage:after {
+        left: 36px;
+    }
+    .ipage::before {
+        right: 36px;    
+    }
+    .ipage p, .ititle {
+        padding: 0 0.9em;
+    }
+
+}
+</style>
+<!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="../tags/React初识/index.html">
+                                <span class="chip bg-color">React初识</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="../categories/React/index.html" class="post-category">
+                                React
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2020-10-01
+                </div>
+                
+
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    3.4k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    16 分
+                </div>
+                
+
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+        </div>
+        <hr class="clearfix">
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <div class="note info">前言: 什么是React？这里是React初识。</div>
+
+
+<p>npx create-react-app “项目名”</p>
+<h3 id="react用到的第三方包"><a href="#react用到的第三方包" class="headerlink" title="react用到的第三方包"></a>react用到的第三方包</h3><ul>
+<li>classnames</li>
+<li>styled-components 将css独立来写的第三方包</li>
+<li>prop-types：props的类型检测工具</li>
+<li><p>axios<br>在jsx里面写js代码就加一个{}</p>
+</li>
+<li><p>创建一个简单的react:</p>
+</li>
+</ul>
+<pre><code>import React from &quot;react&quot;
+import ReactDOM from &quot;react-dom&quot;
+// const app = &lt;h1&gt;welcome first!&lt;/h1&gt; // jsx语法，不需要加引号
+const createApp = (props) =&gt; &#123;
+    return (
+        &lt;div&gt;
+            &#123;/* &#123;只要在jsx里面写js代码就要加一层花括号注释也要用花括号&#125; */&#125;
+            &lt;h1&gt;欢迎来到&#123;props.title&#125;&lt;/h1&gt;
+            &lt;p&gt;优秀的&#123;props.title&#125;&lt;/p&gt;
+        &lt;/div&gt;
+    )
+&#125;
+const app = createApp(&#123;
+    title: &#39;德莱联盟&#39;
+&#125;)
+ReactDOM.render(
+    app,
+    document.querySelector(&quot;#root&quot;)
+)
+</code></pre><h3 id="react定义组件的方式："><a href="#react定义组件的方式：" class="headerlink" title="react定义组件的方式："></a>react定义组件的方式：</h3><ol>
+<li>箭头函数，组件的首字母大写</li>
+<li>使用类组件，可以嵌套</li>
+</ol>
+<ul>
+<li><1> 箭头函数方法：</li>
+</ul>
+<pre><code>// react创建组件的第一个方式：箭头函数，这个名字要大写 App
+const App = (props) =&gt; &#123;
+    return (
+        &lt;div&gt;
+            &lt;h1 title=&#123;props.title&#125;&gt;想吃很多&#123;props.title&#125;&lt;/h1&gt;
+            &lt;p&gt;有很多&#123;props.title&#125;&lt;/p&gt;
+        &lt;/div&gt;
+    )
+&#125;
+ReactDOM.render(
+    &lt;App title=&quot;炸鸡腿&quot;/&gt;,
+    document.querySelector(&quot;#root&quot;)
+)
+</code></pre><ul>
+<li><2>使用类继承React.Component:</li>
+</ul>
+<pre><code>// 定义组件的第二个方法：使用类继承React.Component
+import React, &#123; Component &#125; from &quot;react&quot;
+import &#123; render &#125; from &quot;react-dom&quot;
+
+class App extends Component &#123;
+    render () &#123;
+        console.log(this.props) //&#123;title: &quot;类组件是继承React.Component的&quot;&#125;  参数传递就用this.props
+        return (
+            &lt;div&gt;
+                &lt;h1&gt;类组件&lt;/h1&gt;
+                &lt;p&gt;&#123;this.props.title&#125;&lt;/p&gt;
+            &lt;/div&gt;
+        )
+    &#125;
+&#125;
+// render 是ReactDOM提供的方法，这个方法通常只会使用一次
+render(
+    &lt;App title=&quot;类组件是继承React.Component的&quot;/&gt;,
+    document.querySelector(&quot;#root&quot;)
+)
+
+// 16版本以前创建组件的方法
+// React.createClass(&#123;
+//     render () &#123;
+//         return (
+//             &lt;div&gt;&#123;this.props.title&#125;&lt;/div&gt;
+//         )
+//     &#125;
+// &#125;)
+</code></pre><h3 id="组件嵌套"><a href="#组件嵌套" class="headerlink" title="组件嵌套"></a>组件嵌套</h3><pre><code>import React, &#123; Component &#125; from &quot;react&quot;
+import &#123; render &#125; from &quot;react-dom&quot;
+
+const Header = () =&gt; &lt;h1&gt;组件嵌套&lt;/h1&gt;
+class App extends Component &#123;
+    render () &#123;
+        return (
+            &lt;div&gt;
+                &lt;Header /&gt;
+                &lt;p&gt;&#123;this.props.title&#125;&lt;/p&gt;
+            &lt;/div&gt;
+        )
+    &#125;
+&#125;
+
+render(
+    &lt;App title=&quot;react组件可以嵌套&quot;/&gt;,
+    document.querySelector(&quot;#root&quot;)
+)
+</code></pre><ul>
+<li>jsx原理,通过React.createElement的方式创建元素，有无限个参数，但前两个是固定的，第一个标签名，第二个是标签的属性，剩下的都是子元素<br>React.createElement(type,[props],[…children])</li>
+</ul>
+<pre><code>import React, &#123; Component &#125; from &quot;react&quot;
+import &#123; render &#125; from &quot;react-dom&quot;
+class App extends Component &#123;
+    render () &#123;
+        return (
+            React.createElement (
+                &#39;div&#39;,
+                &#123;
+                    className: &#39;app&#39;,
+                    id: &#39;appRoot&#39;
+                &#125;,
+                React.createElement (
+                    &#39;h1&#39;,
+                    &#123;
+                        className: &#39;title&#39;
+                    &#125;,
+                    &#39;jsx原理&#39;
+                ),
+                React.createElement (
+                    &#39;p&#39;,
+                    null,
+                    &#39;jax到底怎么写？&#39;
+                )
+            )
+        )
+    &#125;
+&#125;
+
+// const appVDom = &#123;
+//     tag: &quot;div&quot;,
+//     attrs: &#123;
+//         className: &quot;app&quot;,
+//         id: &quot;appRoot&quot;
+//     &#125;,
+//     children: [
+//         &#123;
+//             tag: &quot;h1&quot;,
+//             attrs: &#123;
+//                 className: &quot;app&quot;
+//             &#125;,
+//             children: [
+//                 &quot;jsx原理&quot;
+//             ]
+//         &#125;, &#123;
+//             tag: &quot;p&quot;,
+//             attrs: null,
+//             children: [
+//                 &quot;jsx到底怎么写呢？&quot;
+//             ]
+//         &#125;
+//     ]
+
+// &#125;
+
+render(
+    &lt;App /&gt;,
+    document.querySelector(&quot;#root&quot;)
+)
+</code></pre><h3 id="react里的css"><a href="#react里的css" class="headerlink" title="react里的css"></a>react里的css</h3><ol>
+<li>使用style标签内联创建</li>
+</ol>
+<pre><code>import React, &#123; Component &#125; from &quot;react&quot;
+import &#123; render &#125; from &quot;react-dom&quot;
+import classNames from &quot;classnames&quot;
+import styled from &quot;styled-components&quot;
+import &#39;./index.css&#39;
+
+const Title = styled.h2`
+    color: #f00
+    `
+
+class App extends Component &#123;
+    render () &#123;
+        const style = &#123;color: &#39;#f00&#39;&#125;
+        return (
+            &lt;div&gt;
+                &lt;h1&gt;元素的样式&lt;/h1&gt;
+                &lt;Title&gt;styled-components的使用&lt;/Title&gt;
+                &lt;ol&gt;
+                    &lt;li style=&#123;style&#125;&gt;使用style方式&lt;/li&gt;
+                    &lt;li className=&#39;redclass&#39;&gt;使用class方式，但在react里要写成className&lt;/li&gt;
+                    &lt;li className=&#123;classNames(&#39;a&#39;,&#123;&#39;b&#39;: true,&#39;c&#39;: false&#125;)&#125;&gt;要动态添加className使用classnames第三方包&lt;/li&gt;// 该li的class只有a，b没有c
+                &lt;/ol&gt;
+            &lt;/div&gt;
+        )
+    &#125;
+&#125;
+
+render(
+    &lt;App /&gt;,
+    document.querySelector(&quot;#root&quot;)
+)
+</code></pre><ol>
+<li><p>使用class方式，但是要写成className，样式写在css文件中，所有要先import引入<br>第三方的css包：1、classnames，可以动态添加不同的className</p>
+</li>
+<li><p>styled-components 将css独立来写的第三方包</p>
+</li>
+</ol>
+<h3 id="React项目组件化"><a href="#React项目组件化" class="headerlink" title="React项目组件化"></a>React项目组件化</h3><p>快捷键：rcc react的class component；rfc react的function component</p>
+<ol>
+<li><p>整个单页应用的入口文件：App.js</p>
+</li>
+<li><p>入口文件：index.js</p>
+</li>
+<li><p>其余的子组件包在App下面</p>
+</li>
+<li><p>在src下新建一个components目录，里面包含所有的子组件，一个子组件就是一个文件夹，用组件名作为文件夹名字；同时，在components的根目录下还有一个index.js文件，用来引入和导出所有的子组件，在App.js里面引入所有的组件。</p>
+</li>
+</ol>
+<p><img src="https://upload-images.jianshu.io/upload_images/15859737-b3cd09af1772e2bc.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/327/format/webp" alt=""></p>
+<ol>
+<li>在src下创建一个services文件夹，里面有apis.js和index.js文件。apis.js是统一管理接口的文件</li>
+</ol>
+<pre><code>组件化开发React todolist， 项目开发中的组件的基本目录结构基本上是这样的：
+&gt; /your-project
+&gt;
+&gt; - src
+&gt;   - …
+&gt;   - components
+&gt;     - YourComponentOne
+&gt;       - index.js/YourComponentOne.js
+&gt;     - YourComponentTwo
+&gt;       - index.js/YourComponentTwo.js
+&gt;     - index.js 用于导出组件
+注意：一个组件只干一件事情 ，所以TodoList和TodoItem要做成两个组件，这样也方便于后期理解shouldComponentUpdate
+</code></pre><ul>
+<li>一个组件里的return只能有一个根元素 ，因此react里可以使用Fragment（需要import引入，是一个空标签），或者直接使用空标签</li>
+</ul>
+<pre><code>import React, &#123; Component, Fragment &#125; from &#39;react&#39;
+import &#123;
+    TodoHeader,
+    TodoInput,
+    TodoList
+&#125; from &#39;./components&#39;
+export default class App extends Component &#123;
+  render() &#123;
+    return (
+      &lt;Fragment&gt;
+        &lt;TodoHeader /&gt;
+        &lt;TodoInput /&gt;
+        &lt;TodoList /&gt;
+      &lt;/Fragment&gt;
+
+    //   &lt;&gt;
+    //     &lt;TodoHeader /&gt;
+    //     &lt;TodoInput /&gt;
+    //     &lt;TodoList /&gt;
+    //   &lt;/&gt;
+    )
+  &#125;
+&#125;
+</code></pre><p>两种导出方式：</p>
+<pre><code>//第一种,当需要对这里引入的组件进行处理再导出时使用
+// import TodoHeader from &#39;./TodoHeader&#39;
+// import TodoInput from &#39;./TodoInput&#39;
+// import TodoList from &#39;./TodoList&#39;
+
+// export &#123;
+//     TodoHeader,
+//     TodoInput,
+//     TodoList
+// &#125;
+
+//第二种
+export &#123; default as TodoHeader&#125; from &#39;./TodoHeader&#39;
+export &#123; default as TodoInput&#125; from &#39;./TodoInput&#39;
+export &#123; default as TodoList&#125; from &#39;./TodoList&#39;
+</code></pre><h3 id="组件的数据挂载方式"><a href="#组件的数据挂载方式" class="headerlink" title="组件的数据挂载方式"></a>组件的数据挂载方式</h3><ol>
+<li>通过props传递<br>function组件直接通过props.xxx,class组件通过this.props.xxx传递</li>
+</ol>
+<pre><code>import React from &#39;react&#39;
+
+export default function TodoHeader(props) &#123;
+  console.log(props)// &#123;title: &quot;待办事项&quot;&#125;
+  return (
+    &lt;h1&gt;
+      &#123;props.title&#125;
+    &lt;/h1&gt;
+  )
+&#125;
+</code></pre><h3 id="属性（props）"><a href="#属性（props）" class="headerlink" title="属性（props）"></a>属性（props）</h3><p>props.children 组件标签内的内容</p>
+<pre><code>// App.js
+export default class App extends Component &#123;
+  render() &#123;
+    return (
+      &lt;Fragment&gt;
+        &lt;TodoHeader desc=&quot;完成今天所有的事&quot;&gt;
+          待办事项列表
+        &lt;/TodoHeader&gt;
+        &lt;TodoInput btnText=&quot;ADD&quot;/&gt;
+        &lt;TodoList /&gt;
+      &lt;/Fragment&gt;
+
+// TodoHeader/index.js
+export default function TodoHeader(props) &#123;
+  console.log(props) // &#123;desc: &quot;完成今天所有的事&quot;, children: &quot;待办事项列表&quot;&#125;
+  return (
+    &lt;h1&gt;
+      &#123;props.children&#125;
+    &lt;/h1&gt;
+  )
+&#125;
+</code></pre><ul>
+<li>prop-types：props的类型检测工具</li>
+</ul>
+<pre><code>// TodoHeader/index.js
+import React from &#39;react&#39;
+import PropTypes from &#39;prop-types&#39;
+export default function TodoHeader(props) &#123;
+  console.log(props)
+  return (
+    &lt;&gt;
+      &lt;h1&gt;
+        &#123;props.children&#125;
+      &lt;/h1&gt;
+      &lt;h3&gt;&#123;props.desc&#125;&lt;/h3&gt;
+      &lt;p&gt;&#123;props.x + props.y&#125;&lt;/p&gt;
+    &lt;/&gt;
+  )
+&#125;
+TodoHeader.propTypes = &#123;
+  desc: PropTypes.string,
+  x: PropTypes.number.isRequired,
+  y: PropTypes.number.isRequired
+&#125;
+</code></pre><ul>
+<li>class组件写法：</li>
+</ul>
+<pre><code>// TodoInput.js
+import React, &#123; Component &#125; from &#39;react&#39;
+import PropTypes from &#39;prop-types&#39;
+export default class TodoInput extends Component &#123;
+  static propTypes = &#123;
+    btnText: PropTypes.string
+  &#125;
+  static defaultProps = &#123;
+    btnText: &#39;添加TODO&#39; //组件默认值
+  &#125;
+//TodoHeader.defaultProps = &#123;
+//  desc: &#39;如果能重来&#39;
+//&#125;  //funciton组件写法
+  render() &#123;
+    return (
+      &lt;div&gt;
+        &lt;input type=&quot;text&quot;/&gt;&lt;button&gt;&#123;this.props.btnText&#125;&lt;/button&gt;
+      &lt;/div&gt;
+    )
+  &#125;
+&#125;
+</code></pre><h3 id="state"><a href="#state" class="headerlink" title="state"></a>state</h3><p>组件内部状态定义用state，有两种定义方法 ，而props是外部传入的属性.只有class组件才有this和state</p>
+<pre><code>// App.js
+export default class App extends Component &#123;
+// 第一张定义方式
+//  state = &#123;
+//    title: &#39;待办事项&#39;
+//  &#125;
+// 第二种定义方法
+  constructor () &#123;
+    super()
+    this.state = &#123;
+      title: &#39;待办事项&#39;,
+      desc: &#39;完成今天所有的事&#39;
+    &#125;
+  &#125;
+  render() &#123;
+    return (
+      &lt;Fragment&gt;
+        &lt;TodoHeader desc=&#123;this.state.desc&#125;&gt;
+          &#123;this.state.title&#125;
+        &lt;/TodoHeader&gt;
+</code></pre><h3 id="组件的分类："><a href="#组件的分类：" class="headerlink" title="组件的分类："></a>组件的分类：</h3><ul>
+<li>class组件和function组件</li>
+<li>受控组件、不受控组件、半受控组件(通过props传入属性，在组件内部没法修改的叫受控组件，通过state定义的状态不是外部传入的时不受控组件)</li>
+<li>不能跨组件传递props，必须一层一层的传</li>
+<li>组件模板渲染语法</li>
+</ul>
+<pre><code>  &#123;/* &#123;this.todos[0].isCompleted &amp;&amp; &#39;完成&#39;&#125; */&#125;
+  &#123;this.state.todos[0].isCompleted ? &#39;完成&#39; : &#39;未完成&#39;&#125;
+          &#123;
+            this.state.todos.map(todo =&gt; &#123;
+              return &lt;div key=&#123;todo.id&#125;&gt;&#123;todo.title&#125;&lt;/div&gt;
+            &#125;)
+          &#125;
+
+  &#123;div dangerouslySetInnerHTML=&#123;&#123;__html: this.state.article&#125;&#125;&#125; // 渲染不带HTML标签的内容
+</code></pre><p>dangerouslySetInnerHTML，类似于vue的v-html，输出不带HTML标签的内容</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/15859737-7328bdaf4ec71e1f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/557/format/webp" alt=""></p>
+<h3 id="属性vs状态"><a href="#属性vs状态" class="headerlink" title="属性vs状态"></a>属性vs状态</h3><ul>
+<li><p>相似点：都是纯js对象，都会触发render更新，都具有确定性（状态/属性相同，结果相同）</p>
+</li>
+<li><p>不同点：</p>
+</li>
+</ul>
+<p>1.属性能从父组件获取，状态不能<br>2.属性可以由父组件修改，状态不能<br>3.属性能在内部设置默认值，状态也可以<br>4.属性不在组件内部修改，状态要改<br>5.属性能设置子组件初始值，状态不可以<br>6.属性可以修改子组件的值，状态不可以</p>
+<ul>
+<li><p>state 的主要作用是用于组件保存、控制、修改自己的可变状态。state 在组件内1部初始化，可以被组件自身修改，而外部不能访问也不能修改。你可以认为 state 是一个局部的、只能被组件自身控制的数据源。state 中状态可以通过 this.setState方法进行更新，setState 会导致组件的重新渲染。</p>
+</li>
+<li><p>props 的主要作用是让使用该组件的父组件可以传入参数来配置该组件。它是外部传进来的配置参数，组件内部无法控制也无法修改。除非外部组件主动传入新的 props，否则组件的 props 永远保持不变。</p>
+</li>
+<li><p>如果搞不清 state 和 props 的使用场景，记住一个简单的规则：尽量少地用 state，多用 props。</p>
+</li>
+<li><p>没有 state 的组件叫无状态组件（stateless component），设置了 state 的叫做有状态组件（stateful component）。因为状态会带来管理的复杂性，我们尽量多地写无状态组件，尽量少地写有状态的组件。这样会降低代码维护的难度，也会在一定程度上增强组件的可复用性。</p>
+</li>
+</ul>
+<h3 id="更改状态-setState"><a href="#更改状态-setState" class="headerlink" title="更改状态(setState)"></a>更改状态(setState)</h3><ul>
+<li>react不能直接通过this.state.xxx = !this.state.xxx来直接更改状态，要用setSate()方法来更改。（能修改数据，但是页面不会渲染）</li>
+<li>setState()有两个参数，第一个参数有两种情况：第一种是一个对象；第二种情况是一个方法。</li>
+<li>setState的第二个参数是一个回调在里面return一个对象，由于setState是异步的，想要获取最新的state要在第二个参数的回调里获取</li>
+<li>react的setState是异步的，setState里的方法要比它外面的方法后执行</li>
+</ul>
+<pre><code>import React, &#123; Component &#125; from &#39;react&#39;
+
+export default class Like extends Component &#123;
+    constructor () &#123;
+        super()
+        this.state = &#123;
+            isLiked: false
+        &#125;
+    &#125;
+    likedClick = () =&gt; &#123;
+        // setState的第一种写法
+        // this.setState(&#123;
+        //     isLiked: !this.state.isLiked
+        // &#125;)
+        // 第二种写法是一个方法，可以直接传上次的状态prevState和props
+        this.setState((prevState) =&gt; &#123;
+            console.log(prevState)
+            return &#123;
+                isLiked: !prevState.isLiked
+            &#125;
+        &#125;, () =&gt; &#123;
+            // setState是异步的，想要获取最新的state要在这个回调里获取
+            console.log(this.state)
+        &#125;)
+    &#125;
+  render() &#123;
+    return (
+      &lt;div&gt;
+        &lt;span onClick=&#123;this.likedClick&#125;&gt;
+            &#123;
+                this.state.isLiked ? &#39;太菜了！👍&#39; : &#39;棒棒哒！👎&#39;
+            &#125;
+        &lt;/span&gt;
+      &lt;/div&gt;
+    )
+  &#125;
+&#125;
+</code></pre><p><img src="https://upload-images.jianshu.io/upload_images/15859737-d00d2296d33317c1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/593/format/webp" alt=""></p>
+<h3 id="react事件"><a href="#react事件" class="headerlink" title="react事件"></a>react事件</h3><p>如果要修改state里的值需要使用onChange事件(这是采用驼峰命名的)，然后通过setState方法来修改值，否则页面上不能输入</p>
+<pre><code>// TodoInput/index.js
+import React, &#123; Component &#125; from &#39;react&#39;
+import PropTypes from &#39;prop-types&#39;
+export default class TodoInput extends Component &#123;
+  static propTypes = &#123;
+    btnText: PropTypes.string
+  &#125;
+  static defaultProps = &#123;
+    btnText: &#39;添加TODO&#39;
+  &#125;
+  constructor () &#123;
+    super()
+    this.state = &#123;
+      inputValue: &#39;xxx&#39;
+    &#125;
+    // this.addTodo = this.addTodo.bind(this)
+  &#125;
+  onInputChange = (e) =&gt; &#123;
+    this.setState(&#123;
+      inputValue: e.currentTarget.value
+    &#125;)
+  &#125;
+addTodo = (id) =&gt; &#123;
+  console.log(this.state,id)
+  &#125;
+  render() &#123;
+    return (
+      &lt;div&gt;
+        &lt;input type=&quot;text&quot; onChange=&#123;this.onInputChange&#125; value=&#123;this.state.inputValue&#125;/&gt;
+        &lt;button onClick=&#123;this.addTodo.bind(this,1234)&#125;&gt;&#123;this.props.btnText&#125;&lt;/button&gt;
+      &lt;/div&gt;
+    )
+  &#125;
+&#125;
+// App.js
+addItem = (todoTitle) =&gt; &#123;
+    console.log(todoTitle)
+    // this.setState(&#123;
+    //   // 添加todo的第一个方法，这里不能用push，push返回的是数组的长度
+    //   todos: this.state.todos.concat(&#123;
+    //     id: Math.random(),
+    //     title: todoTitle,
+    //     isCompleted: false
+    //   &#125;)
+    // &#125;)
+    // 第二个方法,先把数组复制一份
+    // const newTodos = this.state.todos.slice()
+      const newTodos = [...this.state.todos]
+    newTodos.push(&#123;
+        id: Math.random(),
+        title: todoTitle,
+        isCompleted: false
+    &#125;)
+    this.setState(&#123;
+      todos: newTodos
+    &#125;)
+  &#125;
+</code></pre><p>react里面通过ref获取组件或者dom元素，在使用ref之前要先调用React.createRef来创建ref，要在constructor里创建ref。</p>
+<pre><code>import React, &#123; Component, createRef &#125; from &#39;react&#39;
+import PropTypes from &#39;prop-types&#39;
+export default class TodoInput extends Component &#123;
+  static propTypes = &#123;
+    btnText: PropTypes.string
+  &#125;
+  static defaultProps = &#123;
+    btnText: &#39;添加TODO&#39;
+  &#125;
+  constructor () &#123;
+    super()
+    this.state = &#123;
+      inputValue: &#39;&#39;
+    &#125;
+    // this.addTodo = this.addTodo.bind(this)
+    // 在constructor里创建ref
+    this.inputDom = createRef()
+  &#125;
+  onInputChange = (e) =&gt; &#123;
+    this.setState(&#123;
+      inputValue: e.currentTarget.value
+    &#125;)
+  &#125;
+  addKeyUp = (e) =&gt; &#123;
+    if(e.keyCode === 13)&#123;
+      // console.log(e)
+      this.addTodo()
+    &#125;
+  &#125;
+  addTodo = () =&gt; &#123;
+    if(this.state.inputValue === &#39;&#39;)&#123;
+      return
+    &#125;
+    console.log(this.inputDom)
+    this.props.addItem(this.state.inputValue)
+    this.setState(&#123;
+      inputValue: &#39;&#39;
+    &#125;, () =&gt; &#123;
+        this.inputDom.current.focus()
+    &#125;)
+  &#125;
+  render() &#123;
+    return (
+      &lt;div&gt;
+        &lt;input type=&quot;text&quot; onChange=&#123;this.onInputChange&#125; onKeyUp=&#123;this.addKeyUp&#125; value=&#123;this.state.inputValue&#125; ref=&#123;this.inputDom&#125;/&gt;
+        &lt;button onClick=&#123;this.addTodo&#125;&gt;&#123;this.props.btnText&#125;&lt;/button&gt;
+      &lt;/div&gt;
+    )
+  &#125;
+&#125;
+</code></pre>
+            </div>
+            <hr>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="../about/index.html" rel="external nofollow noreferrer">frank_lee</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="">https://hfxjd9527.github.io/posts/react.html</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="javascript:;" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="../about/index.html" target="_blank">frank_lee</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async="" defer="">
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="../tags/React初识/index.html">
+                                    <span class="chip bg-color">React初识</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="../libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="qq,wechat,weibo,douban" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="../libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.4rem;
+        line-height: 38px;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">带带瑶瑶吧，想喝咖啡！</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="../medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="../medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+        <style>
+    .valine-card {
+        margin: 1.5rem auto;
+    }
+
+    .valine-card .card-content {
+        padding: 20px 20px 5px 20px;
+    }
+
+    #vcomments textarea {
+        box-sizing: border-box;
+        background: url("../medias/comment_bg1.jpg") 100% 100% no-repeat;
+    }
+
+    #vcomments p {
+        margin: 2px 2px 10px;
+        font-size: 1.05rem;
+        line-height: 1.78rem;
+    }
+
+    #vcomments blockquote p {
+        text-indent: 0.2rem;
+    }
+
+    #vcomments a {
+        padding: 0 2px;
+        color: #4cbf30;
+        font-weight: 500;
+        text-decoration: none;
+    }
+
+    #vcomments img {
+        max-width: 100%;
+        height: auto;
+        cursor: pointer;
+    }
+
+    #vcomments ol li {
+        list-style-type: decimal;
+    }
+
+    #vcomments ol,
+    ul {
+        display: block;
+        padding-left: 2em;
+        word-spacing: 0.05rem;
+    }
+
+    #vcomments ul li,
+    ol li {
+        display: list-item;
+        line-height: 1.8rem;
+        font-size: 1rem;
+    }
+
+    #vcomments ul li {
+        list-style-type: disc;
+    }
+
+    #vcomments ul ul li {
+        list-style-type: circle;
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    #vcomments table, th, td {
+        border: 0;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments h1 {
+        font-size: 1.85rem;
+        font-weight: bold;
+        line-height: 2.2rem;
+    }
+
+    #vcomments h2 {
+        font-size: 1.65rem;
+        font-weight: bold;
+        line-height: 1.9rem;
+    }
+
+    #vcomments h3 {
+        font-size: 1.45rem;
+        font-weight: bold;
+        line-height: 1.7rem;
+    }
+
+    #vcomments h4 {
+        font-size: 1.25rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    #vcomments h5 {
+        font-size: 1.1rem;
+        font-weight: bold;
+        line-height: 1.4rem;
+    }
+
+    #vcomments h6 {
+        font-size: 1rem;
+        line-height: 1.3rem;
+    }
+
+    #vcomments p {
+        font-size: 1rem;
+        line-height: 1.5rem;
+    }
+
+    #vcomments hr {
+        margin: 12px 0;
+        border: 0;
+        border-top: 1px solid #ccc;
+    }
+
+    #vcomments blockquote {
+        margin: 15px 0;
+        border-left: 5px solid #42b983;
+        padding: 1rem 0.8rem 0.3rem 0.8rem;
+        color: #666;
+        background-color: rgba(66, 185, 131, .1);
+    }
+
+    #vcomments pre {
+        font-family: monospace, monospace;
+        padding: 1.2em;
+        margin: .5em 0;
+        background: #272822;
+        overflow: auto;
+        border-radius: 0.3em;
+        tab-size: 4;
+    }
+
+    #vcomments code {
+        font-family: monospace, monospace;
+        padding: 1px 3px;
+        font-size: 0.92rem;
+        color: #e96900;
+        background-color: #f8f8f8;
+        border-radius: 2px;
+    }
+
+    #vcomments pre code {
+        font-family: monospace, monospace;
+        padding: 0;
+        color: #e8eaf6;
+        background-color: #272822;
+    }
+
+    #vcomments pre[class*="language-"] {
+        padding: 1.2em;
+        margin: .5em 0;
+    }
+
+    #vcomments code[class*="language-"],
+    pre[class*="language-"] {
+        color: #e8eaf6;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+
+    #vcomments b,
+    strong {
+        font-weight: bold;
+    }
+
+    #vcomments dfn {
+        font-style: italic;
+    }
+
+    #vcomments small {
+        font-size: 85%;
+    }
+
+    #vcomments cite {
+        font-style: normal;
+    }
+
+    #vcomments mark {
+        background-color: #fcf8e3;
+        padding: .2em;
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+</style>
+
+<div class="card valine-card" id="vcomments-top" data-aos="fade-up">
+    <div class="comment_headling" style="font-size: 20px; font-weight: 700; position: relative; padding-left: 20px; top: 15px; padding-bottom: 5px;">
+        <i class="fas fa-comments fa-fw" aria-hidden="true"></i>
+        <span>评论</span>
+    </div>
+    <div id="vcomments" class="card-content" style="display: grid">
+    </div>
+</div>
+
+<script src="../libs/valine/av-min.js"></script>
+<script src="../libs/valine/Valine.min.js"></script>
+<script>
+    new Valine({
+        el: '#vcomments',
+        enableQQ: true,
+        boolean: true,
+        appId: 'ysvnqo0g9aYuoLJrPTp6YHg0-9Nh9j0Va',
+        appKey: '9tav2tXFWVNi2qvR8mQsjvJ1',
+        notify: 'false' === 'true',
+        verify: 'false' === 'true',
+        visitor: 'true' === 'true',
+        avatar: 'monsterid',
+        pageSize: '12',
+        lang: 'zh-cn',
+        placeholder: '欢迎指点江山，无需登录即可评论留言哒~ （客官留下QQ邮箱可好，会得到及时回复哦~）',    
+
+        adminEmailMd5: '80a023e11167a78a35f72ef4dd0a48f4',
+
+        master: ["80a023e11167a78a35f72ef4dd0a48f4"],
+        friends: ["371e125e381e2967651635900798a6b2", "ddf016c0f5a3318ea1fc0d20c8ac4429"],
+        tagMeta: ["博主", "小伙伴", "访客"],
+        // tagMeta: '博主,小伙伴,访客',
+        // master: '80a023e11167a78a35f72ef4dd0a48f4',
+        // friends: '371e125e381e2967651635900798a6b2,ddf016c0f5a3318ea1fc0d20c8ac4429',
+        
+        // 设置Bilibili表情包地址
+        emojiCDN: '//cdn.jsdelivr.net/gh/blogimg/emotion/', 
+        // 表情title和图片映射
+        emojiMaps: {
+            "blob_blobnomcookie" : "https://cdn.jsdelivr.net/gh/blogimg/emotion/blob/blobnomcookie.png",
+"blob_blobnomchristmas" : "https://cdn.jsdelivr.net/gh/blogimg/emotion/blob/blobnomchristmas.png",
+"blob_blobnom" : "https://cdn.jsdelivr.net/gh/blogimg/emotion/blob/blobnom.png",
+"blob_blobnogood" : "https://cdn.jsdelivr.net/gh/blogimg/emotion/blob/blobnogood.png",
+"blob_blobno" : "https://cdn.jsdelivr.net/gh/blogimg/emotion/blob/blobno.png",
+"blob_blobnitro" : "https://cdn.jsdelivr.net/gh/blogimg/emotion/blob/blobnitro.png",
+"blob_blobninja" : "https://cdn.jsdelivr.net/gh/blogimg/emotion/blob/blobninja.png",
+"blob_blobnight" : "https://cdn.jsdelivr.net/gh/blogimg/emotion/blob/blobnight.png",
+"blob_blobneutral" : "https://cdn.jsdelivr.net/gh/blogimg/emotion/blob/blobneutral.png",
+"blob_blobnervous2" : "https://cdn.jsdelivr.net/gh/blogimg/emotion/blob/blobnervous2.png",
+"blob_blobnervous" : "https://cdn.jsdelivr.net/gh/blogimg/emotion/blob/blobnervous.png",
+"blob_blobnerd" : "https://cdn.jsdelivr.net/gh/blogimg/emotion/blob/blobnerd.png",
+"blob_wumpusblob" : "https://cdn.jsdelivr.net/gh/blogimg/emotion/blob/wumpusblob.png",
+"blob_wolfiriblob" : "https://cdn.jsdelivr.net/gh/blogimg/emotion/blob/wolfiriblob.png",
+"blob_thinkingwithblobs" : "https://cdn.jsdelivr.net/gh/blogimg/emotion/blob/thinkingwithblobs.png",
+"blob_superblob" : "https://cdn.jsdelivr.net/gh/blogimg/emotion/blob/superblob.png",
+"blob_rickblob" : "https://cdn.jsdelivr.net/gh/blogimg/emotion/blob/rickblob.png",
+"blob_reindeerblob" : "https://cdn.jsdelivr.net/gh/blogimg/emotion/blob/reindeerblob.png",
+"blob_RedTick" : "https://cdn.jsdelivr.net/gh/blogimg/emotion/blob/RedTick.png",
+"blob_rainblob" : "https://cdn.jsdelivr.net/gh/blogimg/emotion/blob/rainblob.png",
+"blob_pusheenblob" : "https://cdn.jsdelivr.net/gh/blogimg/emotion/blob/pusheenblob.png",
+"blob_pikablob" : "https://cdn.jsdelivr.net/gh/blogimg/emotion/blob/pikablob.png",
+"blob_photoblob" : "https://cdn.jsdelivr.net/gh/blogimg/emotion/blob/photoblob.png",
+"blob_pandablob" : "https://cdn.jsdelivr.net/gh/blogimg/emotion/blob/pandablob.png",
+"blob_notlikeblob" : "https://cdn.jsdelivr.net/gh/blogimg/emotion/blob/notlikeblob.png",
+"blob_nikoblob" : "https://cdn.jsdelivr.net/gh/blogimg/emotion/blob/nikoblob.png",
+"blob_nellyblob" : "https://cdn.jsdelivr.net/gh/blogimg/emotion/blob/nellyblob.png",
+"blob_kirbyblob" : "https://cdn.jsdelivr.net/gh/blogimg/emotion/blob/kirbyblob.png",
+"blob_jakeblob" : "https://cdn.jsdelivr.net/gh/blogimg/emotion/blob/jakeblob.png",
+"blob_greentick" : "https://cdn.jsdelivr.net/gh/blogimg/emotion/blob/greentick.png",
+"blob_googlewhale" : "https://cdn.jsdelivr.net/gh/blogimg/emotion/blob/googlewhale.png",
+"blob_blobbot" : "https://cdn.jsdelivr.net/gh/blogimg/emotion/blob/blobbot.png",
+"blob_blobbored" : "https://cdn.jsdelivr.net/gh/blogimg/emotion/blob/blobbored.png",
+"blob_blobboost" : "https://cdn.jsdelivr.net/gh/blogimg/emotion/blob/blobboost.png",
+"blob_blobblush" : "https://cdn.jsdelivr.net/gh/blogimg/emotion/blob/blobblush.png",
+"blob_blobbanhammer" : "https://cdn.jsdelivr.net/gh/blogimg/emotion/blob/blobbanhammer.png",
+"blob_blobbandage" : "https://cdn.jsdelivr.net/gh/blogimg/emotion/blob/blobbandage.png",
+"blob_blobaww" : "https://cdn.jsdelivr.net/gh/blogimg/emotion/blob/blobaww.png",
+"blob_blobawkward" : "https://cdn.jsdelivr.net/gh/blogimg/emotion/blob/blobawkward.png",
+"blob_blobaviator" : "https://cdn.jsdelivr.net/gh/blogimg/emotion/blob/blobaviator.png",
+"blob_blobartist" : "https://cdn.jsdelivr.net/gh/blogimg/emotion/blob/blobartist.png",
+"blob_blobangry" : "https://cdn.jsdelivr.net/gh/blogimg/emotion/blob/blobangry.png",
+"blob_blobangery" : "https://cdn.jsdelivr.net/gh/blogimg/emotion/blob/blobangery.png",
+"blob_blobangel" : "https://cdn.jsdelivr.net/gh/blogimg/emotion/blob/blobangel.png",
+"blob_blobamused" : "https://cdn.jsdelivr.net/gh/blogimg/emotion/blob/blobamused.png",
+"blob_blob3c" : "https://cdn.jsdelivr.net/gh/blogimg/emotion/blob/blob3c.png",
+"blob_blob0w0" : "https://cdn.jsdelivr.net/gh/blogimg/emotion/blob/blob0w0.png",
+"blob_blob" : "https://cdn.jsdelivr.net/gh/blogimg/emotion/blob/blob.png",
+"blob_b4nzyblob" : "https://cdn.jsdelivr.net/gh/blogimg/emotion/blob/b4nzyblob.png",
+"blob_b1nzyblob2" : "https://cdn.jsdelivr.net/gh/blogimg/emotion/blob/b1nzyblob2.png",
+"blob_b1nzyblob" : "https://cdn.jsdelivr.net/gh/blogimg/emotion/blob/b1nzyblob.png",
+
+"bilibili_热词系列_“狼火”" : "https://cdn.jsdelivr.net/gh/blogimg/emotion/bilibili/热词系列_“狼火”.png",
+"bilibili_热词系列_知识增加" : "https://cdn.jsdelivr.net/gh/blogimg/emotion/bilibili/热词系列_知识增加.png",
+"bilibili_热词系列_张三" : "https://cdn.jsdelivr.net/gh/blogimg/emotion/bilibili/热词系列_张三.png",
+"bilibili_热词系列_有内味了" : "https://cdn.jsdelivr.net/gh/blogimg/emotion/bilibili/热词系列_有内味了.jpg",
+"bilibili_热词系列_我裂开了" : "https://cdn.jsdelivr.net/gh/blogimg/emotion/bilibili/热词系列_我裂开了.png",
+"bilibili_热词系列_我哭了" : "https://cdn.jsdelivr.net/gh/blogimg/emotion/bilibili/热词系列_我哭了.jpg",
+"bilibili_热词系列_问号" : "https://cdn.jsdelivr.net/gh/blogimg/emotion/bilibili/热词系列_问号.png",
+"bilibili_热词系列_危" : "https://cdn.jsdelivr.net/gh/blogimg/emotion/bilibili/热词系列_危.jpg",
+"bilibili_热词系列_你细品" : "https://cdn.jsdelivr.net/gh/blogimg/emotion/bilibili/热词系列_你细品.jpg",
+"bilibili_热词系列_猛男必看" : "https://cdn.jsdelivr.net/gh/blogimg/emotion/bilibili/热词系列_猛男必看.jpg",
+"bilibili_热词系列_害" : "https://cdn.jsdelivr.net/gh/blogimg/emotion/bilibili/热词系列_害.jpg",
+"bilibili_热词系列_咕咕" : "https://cdn.jsdelivr.net/gh/blogimg/emotion/bilibili/热词系列_咕咕.jpg",
+"bilibili_热词系列_递话筒" : "https://cdn.jsdelivr.net/gh/blogimg/emotion/bilibili/热词系列_递话筒.png",
+"bilibili_热词系列_标准结局" : "https://cdn.jsdelivr.net/gh/blogimg/emotion/bilibili/热词系列_标准结局.png",
+"bilibili_热词系列_爱了爱了" : "https://cdn.jsdelivr.net/gh/blogimg/emotion/bilibili/热词系列_爱了爱了.png",
+"bilibili_热词系列_知识盲区" : "https://cdn.jsdelivr.net/gh/blogimg/emotion/bilibili/热词系列_知识盲区.png",
+"bilibili_热词系列_镇站之宝" : "https://cdn.jsdelivr.net/gh/blogimg/emotion/bilibili/热词系列_镇站之宝.png",
+"bilibili_热词系列_真香" : "https://cdn.jsdelivr.net/gh/blogimg/emotion/bilibili/热词系列_真香.png",
+"bilibili_热词系列_有生之年" : "https://cdn.jsdelivr.net/gh/blogimg/emotion/bilibili/热词系列_有生之年.png",
+"bilibili_热词系列_爷关更" : "https://cdn.jsdelivr.net/gh/blogimg/emotion/bilibili/热词系列_爷关更.png",
+"bilibili_热词系列_秀" : "https://cdn.jsdelivr.net/gh/blogimg/emotion/bilibili/热词系列_秀.png",
+"bilibili_热词系列_下次一定" : "https://cdn.jsdelivr.net/gh/blogimg/emotion/bilibili/热词系列_下次一定.png",
+"bilibili_热词系列_我太南了" : "https://cdn.jsdelivr.net/gh/blogimg/emotion/bilibili/热词系列_我太南了.png",
+"bilibili_热词系列_我酸了" : "https://cdn.jsdelivr.net/gh/blogimg/emotion/bilibili/热词系列_我酸了.png",
+"bilibili_热词系列_我全都要" : "https://cdn.jsdelivr.net/gh/blogimg/emotion/bilibili/热词系列_我全都要.png",
+"bilibili_热词系列_完结撒花" : "https://cdn.jsdelivr.net/gh/blogimg/emotion/bilibili/热词系列_完结撒花.png",
+"bilibili_热词系列_神仙UP" : "https://cdn.jsdelivr.net/gh/blogimg/emotion/bilibili/热词系列_神仙UP.png",
+"bilibili_热词系列_三连" : "https://cdn.jsdelivr.net/gh/blogimg/emotion/bilibili/热词系列_三连.png",
+"bilibili_热词系列_你币有了" : "https://cdn.jsdelivr.net/gh/blogimg/emotion/bilibili/热词系列_你币有了.png",
+"bilibili_热词系列_妙啊" : "https://cdn.jsdelivr.net/gh/blogimg/emotion/bilibili/热词系列_妙啊.png",
+"bilibili_热词系列_可以" : "https://cdn.jsdelivr.net/gh/blogimg/emotion/bilibili/热词系列_可以.png",
+"bilibili_热词系列_高产" : "https://cdn.jsdelivr.net/gh/blogimg/emotion/bilibili/热词系列_高产.png",
+"bilibili_热词系列_大师球" : "https://cdn.jsdelivr.net/gh/blogimg/emotion/bilibili/热词系列_大师球.png",
+"bilibili_热词系列_打卡" : "https://cdn.jsdelivr.net/gh/blogimg/emotion/bilibili/热词系列_打卡.png",
+"bilibili_热词系列_锤" : "https://cdn.jsdelivr.net/gh/blogimg/emotion/bilibili/热词系列_锤.png",
+"bilibili_热词系列_吹爆" : "https://cdn.jsdelivr.net/gh/blogimg/emotion/bilibili/热词系列_吹爆.png",
+"bilibili_热词系列_不愧是你" : "https://cdn.jsdelivr.net/gh/blogimg/emotion/bilibili/热词系列_不愧是你.png",
+"bilibili_热词系列_奥力给" : "https://cdn.jsdelivr.net/gh/blogimg/emotion/bilibili/热词系列_奥力给.png",
+"bilibili_热词系列_AWSL" : "https://cdn.jsdelivr.net/gh/blogimg/emotion/bilibili/热词系列_AWSL.png",
+"bilibili_热词系列_狼火" : "https://cdn.jsdelivr.net/gh/blogimg/emotion/bilibili/热词系列_狼火.png",
+
+"custom_37" : "https://cdn.jsdelivr.net/gh/blogimg/picbed@latest/2020/04/22/097cd88f446efae87cb27de38c5eed15.png",
+"custom_36" : "https://cdn.jsdelivr.net/gh/blogimg/picbed@latest/2020/04/22/ec2166501d29bc1eb7380c22944db462.png",
+"custom_35" : "https://cdn.jsdelivr.net/gh/blogimg/picbed@latest/2020/04/22/8ca39f96c182e51cd752dde464157c2e.png",
+"custom_34" : "https://cdn.jsdelivr.net/gh/blogimg/picbed@latest/2020/04/22/0a65c5dd18872b56605c08f7bae2e8c8.png",
+"custom_33" : "https://cdn.jsdelivr.net/gh/blogimg/picbed@latest/2020/04/22/ec3edbfe84684fdb1680307d261c3c7b.png",
+"custom_32" : "https://cdn.jsdelivr.net/gh/blogimg/emotion/custom/31.webp",
+"custom_31" : "https://cdn.jsdelivr.net/gh/blogimg/emotion/custom/30.gif",
+"custom_30" : "https://cdn.jsdelivr.net/gh/blogimg/emotion/custom/29.webp",
+"custom_29" : "https://cdn.jsdelivr.net/gh/blogimg/emotion/custom/28.webp",
+"custom_28" : "https://cdn.jsdelivr.net/gh/blogimg/emotion/custom/27.webp",
+"custom_27" : "https://cdn.jsdelivr.net/gh/blogimg/emotion/custom/26.webp",
+"custom_26" : "https://cdn.jsdelivr.net/gh/blogimg/emotion/custom/25.jpg",
+"custom_25" : "https://cdn.jsdelivr.net/gh/blogimg/emotion/custom/24.webp",
+"custom_24" : "https://cdn.jsdelivr.net/gh/blogimg/emotion/custom/23.webp",
+"custom_23" : "https://cdn.jsdelivr.net/gh/blogimg/emotion/custom/22.webp",
+"custom_22" : "https://cdn.jsdelivr.net/gh/blogimg/emotion/custom/21.webp",
+"custom_21" : "https://cdn.jsdelivr.net/gh/blogimg/emotion/custom/20.webp",
+"custom_20" : "https://cdn.jsdelivr.net/gh/blogimg/emotion/custom/19.webp",
+"custom_19" : "https://cdn.jsdelivr.net/gh/blogimg/emotion/custom/18.jpg",
+"custom_18" : "https://cdn.jsdelivr.net/gh/blogimg/emotion/custom/17.webp",
+"custom_17" : "https://cdn.jsdelivr.net/gh/blogimg/emotion/custom/16.webp",
+"custom_16" : "https://cdn.jsdelivr.net/gh/blogimg/emotion/custom/15.webp",
+"custom_15" : "https://cdn.jsdelivr.net/gh/blogimg/emotion/custom/14.webp",
+"custom_14" : "https://cdn.jsdelivr.net/gh/blogimg/emotion/custom/13.webp",
+"custom_13" : "https://cdn.jsdelivr.net/gh/blogimg/emotion/custom/12.webp",
+"custom_12" : "https://cdn.jsdelivr.net/gh/blogimg/emotion/custom/11.webp",
+"custom_11" : "https://cdn.jsdelivr.net/gh/blogimg/emotion/custom/10.webp",
+"custom_10" : "https://cdn.jsdelivr.net/gh/blogimg/emotion/custom/9.webp",
+"custom_9" : "https://cdn.jsdelivr.net/gh/blogimg/emotion/custom/8.webp",
+"custom_8" : "https://cdn.jsdelivr.net/gh/blogimg/emotion/custom/7.webp",
+"custom_7" : "https://cdn.jsdelivr.net/gh/blogimg/emotion/custom/6.gif",
+"custom_6" : "https://cdn.jsdelivr.net/gh/blogimg/emotion/custom/5.gif",
+"custom_5" : "https://cdn.jsdelivr.net/gh/blogimg/emotion/custom/4.jpg",
+"custom_4" : "https://cdn.jsdelivr.net/gh/blogimg/emotion/custom/3.jpg",
+"custom_3" : "https://cdn.jsdelivr.net/gh/blogimg/emotion/custom/2.webp",
+"custom_2" : "https://cdn.jsdelivr.net/gh/blogimg/emotion/custom/1.webp",
+"custom_1" : "https://cdn.jsdelivr.net/gh/blogimg/picbed@master/2020/04/19/c3164053d300cc5cca5e4dc3311842dc.png",
+"custom_0" : "https://cdn.jsdelivr.net/gh/blogimg/picbed@master/2020/04/19/6b5e768e524c8441ba66184bfdd86d4d.png",
+
+        }
+    });
+</script>
+<!-- 直达评论 -->
+<div id="to_comment" class="comment-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#vcomments" title="直达评论">
+        <i class="fas fa-comments"></i>
+    </a>
+</div>
+
+
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="vue.html">
+                    <div class="card-image">
+                        
+                        <img src="../2020/10/30/02192a0d4da55.jpg" class="responsive-img" alt="Vue-初识详解">
+                        
+                        <span class="card-title">Vue-初识详解</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            前言:  Vue.js 是什么？为什么这么火？这么多人使用？优缺点有哪些？
+
+Vue.js 是什么Vue (读音 /vjuː/，类似于 view) 是一套用于构建用户界面的渐进式框架。与其它大型框架不同的是，Vue 被设计为可以自底向上逐层
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-10-03
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="../categories/Vue/index.html" class="post-category">
+                                    Vue
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="../tags/Vue初识/index.html">
+                        <span class="chip bg-color">Vue初识</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="vue-router.html">
+                    <div class="card-image">
+                        
+                        <img src="../2020/10/30/8c989f4c8692d.jpg" class="responsive-img" alt="Vue-router">
+                        
+                        <span class="card-title">Vue-router</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            前言：vue-router是什么？为什么我们不像原来一样直接用 a 标签编写链接？如何使用？常见路由操作有哪些？
+
+Vue Router是什么Vue Router 是 Vue.js 官方的路由管理器。它和 Vue.js 的核心深度集成，让构
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-09-30
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="../categories/Vue基础/index.html" class="post-category">
+                                    Vue基础
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="../tags/vue-router/index.html">
+                        <span class="chip bg-color">vue-router</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('30')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + '来源: itsfrank_lee<br />'
+            + '文章作者: frank_lee<br />'
+            + '文章链接: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归作者所有，任何形式的转载都请注明出处。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
+    });
+</script>
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="../libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="../libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="../libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="../libs/codeBlock/codeShrink.js"></script>
+
+
+<!-- 代码块折行 -->
+
+
+        </div>
+        
+        
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        
+        
+        <div class="toc-widget" data-spmid="React初识">
+            <div class="toc-title">
+                <i class="far fa-list-alt"></i>
+                &nbsp;&nbsp;目录
+            </div>
+            <div id="toc-content"></div>
+        </div>
+        
+        
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+    
+<div id="floating-toc-btn" class="hide-on-med-and-down" data-spmid="React初识">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+
+<script src="../libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+</main>
+
+
+
+
+    <style>
+    .youpaiyunlogo {
+        height: 26px;
+        display: inline-block;
+        vertical-align: top;
+    }
+</style>
+<footer class="page-footer bg-color">
+    
+        <link rel="stylesheet" href="../libs/aplayer/APlayer.min.css">
+<style>
+    .aplayer .aplayer-lrc p {
+        
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 16px !important;
+    }
+
+    .aplayer .aplayer-lrc p.aplayer-lrc-current {
+        
+        font-size: 15px;
+        color: #42b983;
+    }
+
+    
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
+        left: -66px !important;
+    }
+
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {
+        left: 0px !important;
+    }
+
+    
+</style>
+<div class="">
+    
+    <div class="row">
+        <meting-js class="hidess col l8 offset-l2 m10 offset-m1 s12" server="netease" type="playlist" id="3155294100" fixed='true' autoplay='false' theme='#42b983' loop='all' order='list' preload='auto' volume='0.7' list-folded='true'>
+        </meting-js>
+        <style>
+            .hidess .aplayer-lrc {
+                display: none!important;
+            }
+        </style>
+    </div>
+</div>
+
+<script src="../libs/aplayer/APlayer.min.js"></script>
+<script src="../npm/meting@2/dist/Meting.min.js"></script>
+
+    
+    <div class="container row center-align" style="margin-bottom: 15px !important;">
+        <!-- 访客地图 -->
+        <div class="col s12 m3 l3 social-link" id="visitmap">
+            <a target="_blank" rel="noopener" href="javascript:;" title="访客地图"><img src="https://clustrmaps.com/map_v2.png?cl=ffffff&w=300&t=n&d=JSX4QImR_CbfKkKdutTHIpP3sfxcCP34C8RWeldK8mk&co=000000&ct=ffffff"></a>
+        </div>
+        
+        <!-- 版权信息 -->
+        <div class="col s12 m6 l6 copy-right">
+            Copyright&nbsp;&copy;
+            <span id="year">2019</span>
+            <a href="../about/index.html" target="_blank">frank_lee</a>
+            &nbsp;Powered by&nbsp;<a href="javascript:;" target="_blank">Hexo</a>
+            &nbsp;Theme&nbsp;<a href="javascript:;" target="_blank">Matery</a>
+            <br>
+            
+            <a>Cloud storage</a> service and <a>CDN</a> acceleration provider
+            <a href="javascript:;" target="_blank" title="本站CDN加速/云存储由又拍云提供">
+                <img src="../medias/youpaiyun-logo.png" class="youpaiyunlogo">
+            </a>
+            
+            <br>
+            
+            &nbsp;<i class="fas fa-chart-area"></i>&nbsp;Total number of words: &nbsp;<span class="white-color">65.2k</span>&nbsp;
+            
+            
+            
+            
+            
+            
+            <span id="busuanzi_container_site_pv">
+                &nbsp;<i class="far"></i>&nbsp;Total visits: &nbsp;<span id="busuanzi_value_site_pv" class="white-color"></span>&nbsp;
+            </span>
+            
+            
+            <br>
+            
+            <span id="sitetime">running time</span>
+            <script>
+                function siteTime() {
+                    var seconds = 1000;
+                    var minutes = seconds * 60;
+                    var hours = minutes * 60;
+                    var days = hours * 24;
+                    var years = days * 365;
+                    var today = new Date();
+                    var startYear = "2019";
+                    var startMonth = "6";
+                    var startDate = "28";
+                    var startHour = "0";
+                    var startMinute = "0";
+                    var startSecond = "0";
+                    var todayYear = today.getFullYear();
+                    var todayMonth = today.getMonth() + 1;
+                    var todayDate = today.getDate();
+                    var todayHour = today.getHours();
+                    var todayMinute = today.getMinutes();
+                    var todaySecond = today.getSeconds();
+                    var t1 = Date.UTC(startYear, startMonth, startDate, startHour, startMinute, startSecond);
+                    var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
+                    var diff = t2 - t1;
+                    var diffYears = Math.floor(diff / years);
+                    var diffDays = Math.floor((diff / days) - diffYears * 365);
+                    var diffHours = Math.floor((diff - (diffYears * 365 + diffDays) * days) / hours);
+                    var diffMinutes = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours) /
+                        minutes);
+                    var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours -
+                        diffMinutes * minutes) / seconds);
+                    if (startYear == todayYear) {
+                        document.getElementById("year").innerHTML = todayYear;
+                        document.getElementById("sitetime").innerHTML = "The site has been running for " + "<span class= 'white-color'>"+diffDays+"</span>" + " d " + "<span class= 'white-color'>"+diffHours+"</span>" +
+                            " h " + "<span class= 'white-color'>"+diffMinutes+"</span>" + " m " + "<span class= 'white-color'>"+diffSeconds+"</span>" + " s";
+                    } else {
+                        document.getElementById("year").innerHTML = startYear + " - " + todayYear;
+                        document.getElementById("sitetime").innerHTML = "The site has been running for " + "<span class= 'white-color'>"+diffYears+"</span>" + " y " + "<span class= 'white-color'>"+diffDays+"</span>" +
+                            " d " + "<span class= 'white-color'>"+diffHours+"</span>" + " h " + "<span class= 'white-color'>"+diffMinutes+"</span>" + " m " +"<span class= 'white-color'>"+ diffSeconds+"</span>" + " s";
+                    }
+                }
+                setInterval(siteTime, 1000);
+            </script>
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m3 l3 social-link social-statis">
+    <a href="javascript:;" class="tooltipped" target="_blank" data-tooltip="GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:mailto:dyfeliwa@gmail.com" class="tooltipped" target="_blank" data-tooltip="邮件" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+    <a href="javascript:;" class="tooltipped" target="_blank" data-tooltip="QQ 2536194075" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+</div>
+    </div>
+    
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字" class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="../js/search.js"></script>
+<script type="text/javascript">
+$(function () {
+    searchFunc("/search.xml", 'searchInput', 'searchResult');
+});
+</script>
+
+    
+<!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="javascript:;">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+
+
+
+    <script src="../libs/materialize/materialize.min.js"></script>
+    <script src="../libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="../libs/aos/aos.js"></script>
+    <script src="../libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="../libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="../js/matery.js"></script>
+    
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    
+    <script async="" src="../libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <script src="../libs/instantpage/instantpage.js" type="module"></script>
+    
+
+    <!--动态线条背景-->
+    <script type="text/javascript" color="122 103 238" opacity='0.7' zindex="-2" count="200" src="../canvas-nest.js/1.0.0/canvas-nest.min.js">
+    </script>
+ 
+    <script type="text/javascript" src="../js/click_show_text.js"></script>
+    <script src="../js/linkcard.js"></script>
+
+    <script src="../js/activate-power-mode.js"></script>
+    <script>
+        POWERMODE.colorful = true; // make power mode colorful
+        POWERMODE.shake = false; // turn off shake
+        document.body.addEventListener('input', POWERMODE);
+    </script>
+</body>
+</html>

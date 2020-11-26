@@ -1,0 +1,1582 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="hotreview, frank_lee,itsfrank_lee,hexo,html,css,javascript,jquery,React,Vue,nodeJs,H5,前端,博客,番茄鱼啊">
+    <meta name="description" content="本站主要分享H5前端知识和笔记，博客搭建技巧，人生长谈，风花雪月之事。欢迎各位来访互相学习！奥利给啊！！！">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="baidu-site-verification" content="code-8VjAnGhv8m">
+    <meta name="google-site-verification" content="An02eAw6rCWBVutF85tRr02GvZox5D4Pqd9PKFRzvBs">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>hotreview | itsfrank_lee</title>
+    
+
+    <link rel="stylesheet" type="text/css" href="../libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="../libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="../libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="../libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="../libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="../css/matery.css">
+    <link rel="stylesheet" type="text/css" href="../css/my.css">
+    <link type='text/css' rel="stylesheet" href="../npm/font-awesome@4.7.0/css/font-awesome.min.css">
+    
+    <script src="../libs/jquery/jquery.min.js"></script>
+    <script>
+        (function(){
+            var bp = document.createElement('script');
+            var curProtocol = window.location.protocol.split(':')[0];
+            if (curProtocol === 'https'){
+           bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+          }
+          else{
+          bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+          }
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(bp, s);
+        })();
+        </script>
+        
+<meta name="generator" content="Hexo 5.0.2">
+<link rel="stylesheet" href="../css/prism-tomorrow.css" type="text/css"></head>
+
+
+<body>
+    <script>
+        if (localStorage.getItem('dark') === '1') {
+        document.body.classList.add('dark');
+        }
+        //  else if (new Date().getHours() >= 22 || new Date().getHours() < 7) {
+        // document.body.classList.add('dark');
+        // } 
+        else if (matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+        }
+    </script>
+    <a onclick="switchNightMode()" id="sma">
+        <i class="fa fa-moon-o" id="nightMode" aria-hidden="true"></i>
+    </a>
+    
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="../index.html" class="waves-effect waves-light">
+                    
+                    <img src="../medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">itsfrank_lee</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="../index.html" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="../categories/index.html" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="javascript:;" class="waves-effect waves-light">
+
+      
+      <span>归档</span>
+      <i class="fas fa-chevron-down" aria-hidden="true" style="zoom: 0.6;"></i>
+    </a>
+    <ul class="sub-nav menus_item_child ">
+      
+      <li>
+        <a href="../tags/index.html">
+          
+          <span>标签</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="../archives/index.html">
+          
+          <span>日历</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="../count/index.html">
+          
+          <span>统计</span>
+        </a>
+      </li>
+      
+    </ul>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="../about/index.html" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="javascript:;" class="waves-effect waves-light">
+
+      
+      <span>清单</span>
+      <i class="fas fa-chevron-down" aria-hidden="true" style="zoom: 0.6;"></i>
+    </a>
+    <ul class="sub-nav menus_item_child ">
+      
+      <li>
+        <a href="../videos/index.html">
+          
+          <span>vlog</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="../musics/index.html">
+          
+          <span>music</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="../gallery/index.html">
+          
+          <span>相册</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="../essay/index.html">
+          
+          <span>随笔</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="../tiktok/index.html">
+          
+          <span>tiktok</span>
+        </a>
+      </li>
+      
+    </ul>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="../shuoshuo/index.html" class="waves-effect waves-light">
+      
+      <span>说说</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="../contact/index.html" class="waves-effect waves-light">
+      
+      <span>留言板</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="javascript:;" class="waves-effect waves-light">
+
+      
+      <span>链接库</span>
+      <i class="fas fa-chevron-down" aria-hidden="true" style="zoom: 0.6;"></i>
+    </a>
+    <ul class="sub-nav menus_item_child ">
+      
+      <li>
+        <a href="../friends/index.html">
+          
+          <span>友情链接</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="../collection/index.html">
+          
+          <span>网址收藏</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="../sitenavigation/index.html">
+          
+          <span>网址导航</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="../tenfour/homepage/index.html">
+          
+          <span>TenFour</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="../olympus/index.html">
+          
+          <span>奥林巴斯</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="../lakers-championship/index.html">
+          
+          <span>湖人总冠军</span>
+        </a>
+      </li>
+      
+    </ul>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="javascript:;" class="waves-effect waves-light">
+
+      
+      <span>实验室</span>
+      <i class="fas fa-chevron-down" aria-hidden="true" style="zoom: 0.6;"></i>
+    </a>
+    <ul class="sub-nav menus_item_child ">
+      
+      <li>
+        <a href="../demolist/index.html">
+          
+          <span>demolist</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="">
+          
+          <span>hotreview</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="../todolist/index.html">
+          
+          <span>todolist</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="../ticktack/index.html">
+          
+          <span>ticktack</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="../chromedragon/index.html">
+          
+          <span>chromedragon</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="../vote/index.html">
+          
+          <span>opensourcevote</span>
+        </a>
+      </li>
+      
+    </ul>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="../medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">itsfrank_lee</div>
+        <div class="logo-desc">
+            
+            本站主要分享H5前端知识和笔记，博客搭建技巧，人生长谈，风花雪月之事。欢迎各位来访互相学习！奥利给啊！！！
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="../index.html" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="../categories/index.html" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="javascript:;">
+			
+				<i class="fas fa-fw"></i>
+			
+			归档
+			<span class="m-icon"><i class="fas fa-chevron-right"></i></span>
+		</a>
+            <ul style="background:  ;">
+              
+                <li>
+
+                  <a href="../tags/index.html" style="margin-left:75px">
+				  
+		          <span>标签</span>
+                  </a>
+                </li>
+              
+                <li>
+
+                  <a href="../archives/index.html" style="margin-left:75px">
+				  
+		          <span>日历</span>
+                  </a>
+                </li>
+              
+                <li>
+
+                  <a href="../count/index.html" style="margin-left:75px">
+				  
+		          <span>统计</span>
+                  </a>
+                </li>
+              
+            </ul>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="../about/index.html" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="javascript:;">
+			
+				<i class="fas fa-fw"></i>
+			
+			清单
+			<span class="m-icon"><i class="fas fa-chevron-right"></i></span>
+		</a>
+            <ul style="background:  ;">
+              
+                <li>
+
+                  <a href="../videos/index.html" style="margin-left:75px">
+				  
+		          <span>vlog</span>
+                  </a>
+                </li>
+              
+                <li>
+
+                  <a href="../musics/index.html" style="margin-left:75px">
+				  
+		          <span>music</span>
+                  </a>
+                </li>
+              
+                <li>
+
+                  <a href="../gallery/index.html" style="margin-left:75px">
+				  
+		          <span>相册</span>
+                  </a>
+                </li>
+              
+                <li>
+
+                  <a href="../essay/index.html" style="margin-left:75px">
+				  
+		          <span>随笔</span>
+                  </a>
+                </li>
+              
+                <li>
+
+                  <a href="../tiktok/index.html" style="margin-left:75px">
+				  
+		          <span>tiktok</span>
+                  </a>
+                </li>
+              
+            </ul>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="../shuoshuo/index.html" class="waves-effect waves-light">
+			
+				<i class="fas fa-fw"></i>
+			
+			说说
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="../contact/index.html" class="waves-effect waves-light">
+			
+				<i class="fas fa-fw"></i>
+			
+			留言板
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="javascript:;">
+			
+				<i class="fas fa-fw"></i>
+			
+			链接库
+			<span class="m-icon"><i class="fas fa-chevron-right"></i></span>
+		</a>
+            <ul style="background:  ;">
+              
+                <li>
+
+                  <a href="../friends/index.html" style="margin-left:75px">
+				  
+		          <span>友情链接</span>
+                  </a>
+                </li>
+              
+                <li>
+
+                  <a href="../collection/index.html" style="margin-left:75px">
+				  
+		          <span>网址收藏</span>
+                  </a>
+                </li>
+              
+                <li>
+
+                  <a href="../sitenavigation/index.html" style="margin-left:75px">
+				  
+		          <span>网址导航</span>
+                  </a>
+                </li>
+              
+                <li>
+
+                  <a href="../tenfour/homepage/index.html" style="margin-left:75px">
+				  
+		          <span>TenFour</span>
+                  </a>
+                </li>
+              
+                <li>
+
+                  <a href="../olympus/index.html" style="margin-left:75px">
+				  
+		          <span>奥林巴斯</span>
+                  </a>
+                </li>
+              
+                <li>
+
+                  <a href="../lakers-championship/index.html" style="margin-left:75px">
+				  
+		          <span>湖人总冠军</span>
+                  </a>
+                </li>
+              
+            </ul>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="javascript:;">
+			
+				<i class="fas fa-fw"></i>
+			
+			实验室
+			<span class="m-icon"><i class="fas fa-chevron-right"></i></span>
+		</a>
+            <ul style="background:  ;">
+              
+                <li>
+
+                  <a href="../demolist/index.html" style="margin-left:75px">
+				  
+		          <span>demolist</span>
+                  </a>
+                </li>
+              
+                <li>
+
+                  <a href="" style="margin-left:75px">
+				  
+		          <span>hotreview</span>
+                  </a>
+                </li>
+              
+                <li>
+
+                  <a href="../todolist/index.html" style="margin-left:75px">
+				  
+		          <span>todolist</span>
+                  </a>
+                </li>
+              
+                <li>
+
+                  <a href="../ticktack/index.html" style="margin-left:75px">
+				  
+		          <span>ticktack</span>
+                  </a>
+                </li>
+              
+                <li>
+
+                  <a href="../chromedragon/index.html" style="margin-left:75px">
+				  
+		          <span>chromedragon</span>
+                  </a>
+                </li>
+              
+                <li>
+
+                  <a href="../vote/index.html" style="margin-left:75px">
+				  
+		          <span>opensourcevote</span>
+                  </a>
+                </li>
+              
+            </ul>
+          
+        </li>
+        
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+    </nav>
+
+</header>
+
+    <div class="bg-cover pd-header about-cover">
+    <div class="container">
+    <div class="row">
+    <div class="col s10 offset-s1 m8 offset-m2 l8 offset-l2">
+        <div class="brand">
+            <div class="title center-align">
+                
+                    hotreview
+                 
+            </div>
+
+            <div class="description center-align">
+                
+                <span id="subtitle"></span>
+                <script src="../npm/typed.js@2.0.js"></script>
+                <script>
+                    var typed = new Typed("#subtitle", {
+                        strings: ['坚持打卡，有源源就有我！',''],
+                        startDelay: 200,
+                        typeSpeed: 120,
+                        loop: true,
+                        backSpeed: 50,
+                        showCursor: true
+                    });
+                </script>
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script>
+    // 每天切换 banner 图.  Switch banner image every day.
+    var bannerUrl = "/medias/banner/" + new Date().getDay() + '.jpg';
+    $('.bg-cover').css('background-image', 'url(' + bannerUrl + ')');
+</script>
+
+
+    </div>
+</div>
+<style>
+    .bg-cover {
+        background-image: url("../2020/10/15/377168ba23f0a.png")!important;
+    }
+    .bg-cover::before {
+        background-image: url(../gh/moezx/cdn@3.1.9/img/Sakura/images/grid.png);
+    }
+</style>
+<main class="content">
+    <div class="container">
+        <!-- 社会语录这一块 -->
+        <style>
+            .btns a {
+                text-decoration: none;
+                border: 2px solid blueviolet;
+                padding: 5px;
+                color: #6f6f6f;
+                text-transform: uppercase;
+                letter-spacing: 2px;
+                position: relative;
+                display: inline-block;
+                margin: 20px auto 8px;               
+            }
+            body.dark .btns a::before, body.dark .btns a::after {
+                background-color: #282c34;
+            }
+            .btns a::before {
+                content: "";
+                position: absolute;
+                top: 5px;
+                left: -2px;
+                width: calc(100% + 6px);
+                height: calc(100% - 10px);
+                background-color: #eceffc;
+                transition: all 0.5s ease-in-out;
+                transform: scaleY(1);
+            }
+            .btns a::after {
+                content: "";
+                position: absolute;
+                left: 5px;
+                top: -5px;
+                width: calc(100% - 10px);
+                height: calc(100% + 10px);
+                background-color: #eceffc;
+                transition: all 0.5s ease-in-out;
+                transform: scaleX(1);
+            }
+            #susays {
+                position: relative;
+                z-index: 3;
+                font-family: "Linux Biolinum", "Noto Serif SC", Helvetica, Arial, Menlo, Monaco, monospace, sans-serif;
+            }
+            .huans {
+                position: relative;
+                z-index: 3;
+            }
+            .cardbg {
+                background: rgb(236, 239, 252);
+                padding: 16px 36px;
+            }
+            body.dark code {
+                background-color: #eef7fa;
+            }
+            .btns img {
+                border-radius: 50%;
+                width: 200px;
+                height: 200px;
+                margin-bottom: 10px;
+                
+            }
+            /* 修改小屏幕下logo文字样式. */
+            @media only screen and (max-width: 600px) {
+                .bg-cover {
+                    height: 32vh;
+                }
+                .poem-wrap h1 {
+                    margin-top: 26px;
+                }
+            }
+            source, audio {
+                outline: none;
+                border: 0;
+            }
+            .audiobtn {
+                margin: 30px auto 10px;               
+            }
+            .poem-wrap {
+                margin: 18px auto;
+            }
+            .kuandus {
+                width: 66px!important;
+            }
+            .kuandus a {
+                display: inline-block;
+                padding: 6px;
+            }
+            .kuandus a span {
+                color: #797979;
+            }
+        </style>
+        
+        <!-- 社会语录模块 -->
+        <div class="card cardbg">
+            <div class="note info">精神小伙，那社会语录真的是铁铁的，然后就想起一言API了哈哈哈嗝儿，于是就 ...... 社会语录API，老铁，整一个？<code>安排？</code></div>
+            <div class="btns center-align">
+                <img src="../2020/10/15/e66a2d82254eb.jpg">
+                <br>
+                <a><font size="5"><span id="susays">社会没有将与帅，只有实力这一块。</span></font></a>
+                <br>
+                <a href="javascript:location.reload()"><span class="huans">下一句</span></a>
+            </div>
+            <script src="https://cdn.ipayy.net/fcc/api.php?way=a"></script>
+            <script>
+                fetch("https://cdn.ipayy.net/says/new/api.php?encode=json")
+                .then(res => res.json())
+                .then(data => susays.innerText = data.say);
+            </script>
+            <script src="../says/my.js"></script>
+            <div class="audiobtn center-align">
+                <audio controls="">
+                    <source id="tts_source" type="audio/mpeg" src="http://tts.baidu.com/text2audio/text2audio?lan=zh&amp;ie=UTF-8&amp;spd=4.5&amp;text=
+                    社会语录，老铁，开始给你安排，
+                    精神语录网上抄，小心钢棍身上飘，
+                    王八摸头必有所求，大哥摸头必有所愁，大哥你潇洒人世走，王八它快乐水中游，
+                    下山猛虎战群狼，败者为寇胜者为王，
+                    社会没有遮天树 只有一物，降一物，
+                    万般皆是命，半点不由人，你看我还有几分像从前，
+                    我年轻需要你指点，但不需要你指指点点，
+                    青春献给小酒桌，醉生梦死就是喝，
+                    只怪自我，太年轻，是人是狗没分清，
+                    社会道路一条条，社会哥得配上社会摇，
+                    你有你的故事，我有我的背景，不是很硬，但你别碰，
+                    我见过她所有的样子，我只想要看看她不属于我的样子，
+                    世界那么乱，你装纯给谁看，
+                    现在的小伙装社会，小姑娘，她装太妹，喝点酒她如痴如醉，你给我装鸡毛黑社会，
+                    人生如梦一盘棋，大小流氓请少提，
+                    展翅翱翔做气质流氓，不慌不忙在咱们来日方长，
+                    可能你路子很野，很牛逼，但我不待见你，你就是傻逼，
+                    你是我新鲜感褪去后仅存的心动，
+                    小皮鞋配牛仔裤，俩腿一迈，流氓步，
+                    做事分清眉眼高低，耗子没事儿别舔猫逼，
+                    你强归你强 我做我的王，
+                    得不到就是得不到，别总说你不想要，
+                    关公骑马战千里，你要排面我给你，
+                    手拿扎枪烽火令，小伙注定社会命。
+                    老铁，安排到此结束，下次再来。
+                    ">
+                </audio>
+            </div>
+        </div>
+
+        <!-- 网易云热评模块 -->
+        <div class="card cardbg">
+            <div class="note info">今天你网抑云了吗？兄弟们，到点了到点了，都给我哭~ 呜呜呜呜呜...，夜间11：59：59，来不及解释了，<code>上车？</code></div>
+                <div class="btns center-align">
+                    <img src="../2020/10/16/f6f3e72b9ef97.jpg">
+                </div>
+                <!-- 加入网易云音乐热门评论，实时更新 --> 
+                <div class="poem-wrap"> 
+                    <div class="poem-border poem-left"></div>
+                    <div class="poem-border poem-right"></div>
+                    <h1>网抑云热评</h1>
+                    <p id="poem">loading...</p>
+                    <p id="info">loading...</p>
+                </div>
+                <div class="poem-wrap kuandus center-align">
+                    <div class="poem-border poem-left"></div>
+                    <div class="poem-border poem-right"></div>
+                    <a href="javascript:location.reload()"><span class="huans">下一句</span></a>
+                </div>
+                <script>
+                    $.get("https://v1.hitokoto.cn?c=j",function(data,status){if(status=='success'){$('#poem').html(data.hitokoto);if(data.from_who!=null){$('#info').html(data.from_who+" · "+"《 "+data.from+" 》");}else{$('#info').html(" “ "+data.from+" ” ");}}else{$('#poem').html("获取出错啦");}});
+                </script>
+
+                <div class="audiobtn center-align">
+                    <audio controls="">
+                        <source id="tts_source" type="audio/mpeg" src="http://tts.baidu.com/text2audio/text2audio?lan=zh&amp;ie=UTF-8&amp;spd=4.8&amp;text=
+                        兄弟，要开始网抑云了哦。
+                        遗憾吗，那么喜欢，连张合影都没有。
+                        你回头看了我一眼，我记了好多年。
+                        我们听过无数的道理，却仍旧过不好这一生。
+                        生而为人，我很抱歉。
+                        希望你没有动态的日子里都在好好生活。
+                        你走的时候，没有一丝停留。
+                        我今天失恋了，陌生人能给我点个赞吗。
+                        我喜欢你，从满心欢喜到满目疮疾。
+                        你说爱情爱要两情相悦,否则,所有的喜欢都是心酸。
+                        下雨了，我说的不是天气。
+                        世界上最令人激动的一件事情是，你原本以为没有机会靠近的人。竟然爱上了你。
+                        你叫我听的歌我都觉得有意义，
+                        你说的电影我都觉得有深意，你口中的风景我都觉得好美丽，不过是因为我喜欢你。
+                        我记忆中三次最强烈的心跳，分别发生在上课被老师点名，
+                        下楼梯一脚踩空，还有你对我微笑的时候。
+                        到点了，已黑化，好想爱这个世界。
+                        我有一个朋友很喜欢李诞的这一句情诗：起初，大雨中百鬼夜行，我们混在其中，比鬼还高兴。
+                        数学里说，过程错了，就是错了。
+                        后来我发现，太浓烈的东西总是不长久，
+                        应了那句老话，第一眼就心动的人没法做朋友。
+                        见到你那一刻我心里有场海啸，可我静静站着，没有让任何人知道。
+                        喜欢一个人的时候，吸进去那么多勇气，呼出来的都是叹息。
+                        好了，兄弟们，今天就到此为止吧，明天依旧元气满满哦。                        
+                        ">
+                    </audio>
+                </div>
+        </div>
+
+
+
+        <div class="card">
+            
+
+            
+
+            
+
+            
+
+            
+            <style>
+    .valine-card {
+        margin: 1.5rem auto;
+    }
+
+    .valine-card .card-content {
+        padding: 20px 20px 5px 20px;
+    }
+
+    #vcomments textarea {
+        box-sizing: border-box;
+        background: url("../medias/comment_bg1.jpg") 100% 100% no-repeat;
+    }
+
+    #vcomments p {
+        margin: 2px 2px 10px;
+        font-size: 1.05rem;
+        line-height: 1.78rem;
+    }
+
+    #vcomments blockquote p {
+        text-indent: 0.2rem;
+    }
+
+    #vcomments a {
+        padding: 0 2px;
+        color: #4cbf30;
+        font-weight: 500;
+        text-decoration: none;
+    }
+
+    #vcomments img {
+        max-width: 100%;
+        height: auto;
+        cursor: pointer;
+    }
+
+    #vcomments ol li {
+        list-style-type: decimal;
+    }
+
+    #vcomments ol,
+    ul {
+        display: block;
+        padding-left: 2em;
+        word-spacing: 0.05rem;
+    }
+
+    #vcomments ul li,
+    ol li {
+        display: list-item;
+        line-height: 1.8rem;
+        font-size: 1rem;
+    }
+
+    #vcomments ul li {
+        list-style-type: disc;
+    }
+
+    #vcomments ul ul li {
+        list-style-type: circle;
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    #vcomments table, th, td {
+        border: 0;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments h1 {
+        font-size: 1.85rem;
+        font-weight: bold;
+        line-height: 2.2rem;
+    }
+
+    #vcomments h2 {
+        font-size: 1.65rem;
+        font-weight: bold;
+        line-height: 1.9rem;
+    }
+
+    #vcomments h3 {
+        font-size: 1.45rem;
+        font-weight: bold;
+        line-height: 1.7rem;
+    }
+
+    #vcomments h4 {
+        font-size: 1.25rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    #vcomments h5 {
+        font-size: 1.1rem;
+        font-weight: bold;
+        line-height: 1.4rem;
+    }
+
+    #vcomments h6 {
+        font-size: 1rem;
+        line-height: 1.3rem;
+    }
+
+    #vcomments p {
+        font-size: 1rem;
+        line-height: 1.5rem;
+    }
+
+    #vcomments hr {
+        margin: 12px 0;
+        border: 0;
+        border-top: 1px solid #ccc;
+    }
+
+    #vcomments blockquote {
+        margin: 15px 0;
+        border-left: 5px solid #42b983;
+        padding: 1rem 0.8rem 0.3rem 0.8rem;
+        color: #666;
+        background-color: rgba(66, 185, 131, .1);
+    }
+
+    #vcomments pre {
+        font-family: monospace, monospace;
+        padding: 1.2em;
+        margin: .5em 0;
+        background: #272822;
+        overflow: auto;
+        border-radius: 0.3em;
+        tab-size: 4;
+    }
+
+    #vcomments code {
+        font-family: monospace, monospace;
+        padding: 1px 3px;
+        font-size: 0.92rem;
+        color: #e96900;
+        background-color: #f8f8f8;
+        border-radius: 2px;
+    }
+
+    #vcomments pre code {
+        font-family: monospace, monospace;
+        padding: 0;
+        color: #e8eaf6;
+        background-color: #272822;
+    }
+
+    #vcomments pre[class*="language-"] {
+        padding: 1.2em;
+        margin: .5em 0;
+    }
+
+    #vcomments code[class*="language-"],
+    pre[class*="language-"] {
+        color: #e8eaf6;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+
+    #vcomments b,
+    strong {
+        font-weight: bold;
+    }
+
+    #vcomments dfn {
+        font-style: italic;
+    }
+
+    #vcomments small {
+        font-size: 85%;
+    }
+
+    #vcomments cite {
+        font-style: normal;
+    }
+
+    #vcomments mark {
+        background-color: #fcf8e3;
+        padding: .2em;
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+</style>
+
+<div class="card valine-card" id="vcomments-top" data-aos="fade-up">
+    <div class="comment_headling" style="font-size: 20px; font-weight: 700; position: relative; padding-left: 20px; top: 15px; padding-bottom: 5px;">
+        <i class="fas fa-comments fa-fw" aria-hidden="true"></i>
+        <span>评论</span>
+    </div>
+    <div id="vcomments" class="card-content" style="display: grid">
+    </div>
+</div>
+
+<script src="../libs/valine/av-min.js"></script>
+<script src="../libs/valine/Valine.min.js"></script>
+<script>
+    new Valine({
+        el: '#vcomments',
+        enableQQ: true,
+        boolean: true,
+        appId: 'ysvnqo0g9aYuoLJrPTp6YHg0-9Nh9j0Va',
+        appKey: '9tav2tXFWVNi2qvR8mQsjvJ1',
+        notify: 'false' === 'true',
+        verify: 'false' === 'true',
+        visitor: 'true' === 'true',
+        avatar: 'monsterid',
+        pageSize: '12',
+        lang: 'zh-cn',
+        placeholder: '欢迎指点江山，无需登录即可评论留言哒~ （客官留下QQ邮箱可好，会得到及时回复哦~）',    
+
+        adminEmailMd5: '80a023e11167a78a35f72ef4dd0a48f4',
+
+        master: ["80a023e11167a78a35f72ef4dd0a48f4"],
+        friends: ["371e125e381e2967651635900798a6b2", "ddf016c0f5a3318ea1fc0d20c8ac4429"],
+        tagMeta: ["博主", "小伙伴", "访客"],
+        // tagMeta: '博主,小伙伴,访客',
+        // master: '80a023e11167a78a35f72ef4dd0a48f4',
+        // friends: '371e125e381e2967651635900798a6b2,ddf016c0f5a3318ea1fc0d20c8ac4429',
+        
+        // 设置Bilibili表情包地址
+        emojiCDN: '//cdn.jsdelivr.net/gh/blogimg/emotion/', 
+        // 表情title和图片映射
+        emojiMaps: {
+            "blob_blobnomcookie" : "https://cdn.jsdelivr.net/gh/blogimg/emotion/blob/blobnomcookie.png",
+"blob_blobnomchristmas" : "https://cdn.jsdelivr.net/gh/blogimg/emotion/blob/blobnomchristmas.png",
+"blob_blobnom" : "https://cdn.jsdelivr.net/gh/blogimg/emotion/blob/blobnom.png",
+"blob_blobnogood" : "https://cdn.jsdelivr.net/gh/blogimg/emotion/blob/blobnogood.png",
+"blob_blobno" : "https://cdn.jsdelivr.net/gh/blogimg/emotion/blob/blobno.png",
+"blob_blobnitro" : "https://cdn.jsdelivr.net/gh/blogimg/emotion/blob/blobnitro.png",
+"blob_blobninja" : "https://cdn.jsdelivr.net/gh/blogimg/emotion/blob/blobninja.png",
+"blob_blobnight" : "https://cdn.jsdelivr.net/gh/blogimg/emotion/blob/blobnight.png",
+"blob_blobneutral" : "https://cdn.jsdelivr.net/gh/blogimg/emotion/blob/blobneutral.png",
+"blob_blobnervous2" : "https://cdn.jsdelivr.net/gh/blogimg/emotion/blob/blobnervous2.png",
+"blob_blobnervous" : "https://cdn.jsdelivr.net/gh/blogimg/emotion/blob/blobnervous.png",
+"blob_blobnerd" : "https://cdn.jsdelivr.net/gh/blogimg/emotion/blob/blobnerd.png",
+"blob_wumpusblob" : "https://cdn.jsdelivr.net/gh/blogimg/emotion/blob/wumpusblob.png",
+"blob_wolfiriblob" : "https://cdn.jsdelivr.net/gh/blogimg/emotion/blob/wolfiriblob.png",
+"blob_thinkingwithblobs" : "https://cdn.jsdelivr.net/gh/blogimg/emotion/blob/thinkingwithblobs.png",
+"blob_superblob" : "https://cdn.jsdelivr.net/gh/blogimg/emotion/blob/superblob.png",
+"blob_rickblob" : "https://cdn.jsdelivr.net/gh/blogimg/emotion/blob/rickblob.png",
+"blob_reindeerblob" : "https://cdn.jsdelivr.net/gh/blogimg/emotion/blob/reindeerblob.png",
+"blob_RedTick" : "https://cdn.jsdelivr.net/gh/blogimg/emotion/blob/RedTick.png",
+"blob_rainblob" : "https://cdn.jsdelivr.net/gh/blogimg/emotion/blob/rainblob.png",
+"blob_pusheenblob" : "https://cdn.jsdelivr.net/gh/blogimg/emotion/blob/pusheenblob.png",
+"blob_pikablob" : "https://cdn.jsdelivr.net/gh/blogimg/emotion/blob/pikablob.png",
+"blob_photoblob" : "https://cdn.jsdelivr.net/gh/blogimg/emotion/blob/photoblob.png",
+"blob_pandablob" : "https://cdn.jsdelivr.net/gh/blogimg/emotion/blob/pandablob.png",
+"blob_notlikeblob" : "https://cdn.jsdelivr.net/gh/blogimg/emotion/blob/notlikeblob.png",
+"blob_nikoblob" : "https://cdn.jsdelivr.net/gh/blogimg/emotion/blob/nikoblob.png",
+"blob_nellyblob" : "https://cdn.jsdelivr.net/gh/blogimg/emotion/blob/nellyblob.png",
+"blob_kirbyblob" : "https://cdn.jsdelivr.net/gh/blogimg/emotion/blob/kirbyblob.png",
+"blob_jakeblob" : "https://cdn.jsdelivr.net/gh/blogimg/emotion/blob/jakeblob.png",
+"blob_greentick" : "https://cdn.jsdelivr.net/gh/blogimg/emotion/blob/greentick.png",
+"blob_googlewhale" : "https://cdn.jsdelivr.net/gh/blogimg/emotion/blob/googlewhale.png",
+"blob_blobbot" : "https://cdn.jsdelivr.net/gh/blogimg/emotion/blob/blobbot.png",
+"blob_blobbored" : "https://cdn.jsdelivr.net/gh/blogimg/emotion/blob/blobbored.png",
+"blob_blobboost" : "https://cdn.jsdelivr.net/gh/blogimg/emotion/blob/blobboost.png",
+"blob_blobblush" : "https://cdn.jsdelivr.net/gh/blogimg/emotion/blob/blobblush.png",
+"blob_blobbanhammer" : "https://cdn.jsdelivr.net/gh/blogimg/emotion/blob/blobbanhammer.png",
+"blob_blobbandage" : "https://cdn.jsdelivr.net/gh/blogimg/emotion/blob/blobbandage.png",
+"blob_blobaww" : "https://cdn.jsdelivr.net/gh/blogimg/emotion/blob/blobaww.png",
+"blob_blobawkward" : "https://cdn.jsdelivr.net/gh/blogimg/emotion/blob/blobawkward.png",
+"blob_blobaviator" : "https://cdn.jsdelivr.net/gh/blogimg/emotion/blob/blobaviator.png",
+"blob_blobartist" : "https://cdn.jsdelivr.net/gh/blogimg/emotion/blob/blobartist.png",
+"blob_blobangry" : "https://cdn.jsdelivr.net/gh/blogimg/emotion/blob/blobangry.png",
+"blob_blobangery" : "https://cdn.jsdelivr.net/gh/blogimg/emotion/blob/blobangery.png",
+"blob_blobangel" : "https://cdn.jsdelivr.net/gh/blogimg/emotion/blob/blobangel.png",
+"blob_blobamused" : "https://cdn.jsdelivr.net/gh/blogimg/emotion/blob/blobamused.png",
+"blob_blob3c" : "https://cdn.jsdelivr.net/gh/blogimg/emotion/blob/blob3c.png",
+"blob_blob0w0" : "https://cdn.jsdelivr.net/gh/blogimg/emotion/blob/blob0w0.png",
+"blob_blob" : "https://cdn.jsdelivr.net/gh/blogimg/emotion/blob/blob.png",
+"blob_b4nzyblob" : "https://cdn.jsdelivr.net/gh/blogimg/emotion/blob/b4nzyblob.png",
+"blob_b1nzyblob2" : "https://cdn.jsdelivr.net/gh/blogimg/emotion/blob/b1nzyblob2.png",
+"blob_b1nzyblob" : "https://cdn.jsdelivr.net/gh/blogimg/emotion/blob/b1nzyblob.png",
+
+"bilibili_热词系列_“狼火”" : "https://cdn.jsdelivr.net/gh/blogimg/emotion/bilibili/热词系列_“狼火”.png",
+"bilibili_热词系列_知识增加" : "https://cdn.jsdelivr.net/gh/blogimg/emotion/bilibili/热词系列_知识增加.png",
+"bilibili_热词系列_张三" : "https://cdn.jsdelivr.net/gh/blogimg/emotion/bilibili/热词系列_张三.png",
+"bilibili_热词系列_有内味了" : "https://cdn.jsdelivr.net/gh/blogimg/emotion/bilibili/热词系列_有内味了.jpg",
+"bilibili_热词系列_我裂开了" : "https://cdn.jsdelivr.net/gh/blogimg/emotion/bilibili/热词系列_我裂开了.png",
+"bilibili_热词系列_我哭了" : "https://cdn.jsdelivr.net/gh/blogimg/emotion/bilibili/热词系列_我哭了.jpg",
+"bilibili_热词系列_问号" : "https://cdn.jsdelivr.net/gh/blogimg/emotion/bilibili/热词系列_问号.png",
+"bilibili_热词系列_危" : "https://cdn.jsdelivr.net/gh/blogimg/emotion/bilibili/热词系列_危.jpg",
+"bilibili_热词系列_你细品" : "https://cdn.jsdelivr.net/gh/blogimg/emotion/bilibili/热词系列_你细品.jpg",
+"bilibili_热词系列_猛男必看" : "https://cdn.jsdelivr.net/gh/blogimg/emotion/bilibili/热词系列_猛男必看.jpg",
+"bilibili_热词系列_害" : "https://cdn.jsdelivr.net/gh/blogimg/emotion/bilibili/热词系列_害.jpg",
+"bilibili_热词系列_咕咕" : "https://cdn.jsdelivr.net/gh/blogimg/emotion/bilibili/热词系列_咕咕.jpg",
+"bilibili_热词系列_递话筒" : "https://cdn.jsdelivr.net/gh/blogimg/emotion/bilibili/热词系列_递话筒.png",
+"bilibili_热词系列_标准结局" : "https://cdn.jsdelivr.net/gh/blogimg/emotion/bilibili/热词系列_标准结局.png",
+"bilibili_热词系列_爱了爱了" : "https://cdn.jsdelivr.net/gh/blogimg/emotion/bilibili/热词系列_爱了爱了.png",
+"bilibili_热词系列_知识盲区" : "https://cdn.jsdelivr.net/gh/blogimg/emotion/bilibili/热词系列_知识盲区.png",
+"bilibili_热词系列_镇站之宝" : "https://cdn.jsdelivr.net/gh/blogimg/emotion/bilibili/热词系列_镇站之宝.png",
+"bilibili_热词系列_真香" : "https://cdn.jsdelivr.net/gh/blogimg/emotion/bilibili/热词系列_真香.png",
+"bilibili_热词系列_有生之年" : "https://cdn.jsdelivr.net/gh/blogimg/emotion/bilibili/热词系列_有生之年.png",
+"bilibili_热词系列_爷关更" : "https://cdn.jsdelivr.net/gh/blogimg/emotion/bilibili/热词系列_爷关更.png",
+"bilibili_热词系列_秀" : "https://cdn.jsdelivr.net/gh/blogimg/emotion/bilibili/热词系列_秀.png",
+"bilibili_热词系列_下次一定" : "https://cdn.jsdelivr.net/gh/blogimg/emotion/bilibili/热词系列_下次一定.png",
+"bilibili_热词系列_我太南了" : "https://cdn.jsdelivr.net/gh/blogimg/emotion/bilibili/热词系列_我太南了.png",
+"bilibili_热词系列_我酸了" : "https://cdn.jsdelivr.net/gh/blogimg/emotion/bilibili/热词系列_我酸了.png",
+"bilibili_热词系列_我全都要" : "https://cdn.jsdelivr.net/gh/blogimg/emotion/bilibili/热词系列_我全都要.png",
+"bilibili_热词系列_完结撒花" : "https://cdn.jsdelivr.net/gh/blogimg/emotion/bilibili/热词系列_完结撒花.png",
+"bilibili_热词系列_神仙UP" : "https://cdn.jsdelivr.net/gh/blogimg/emotion/bilibili/热词系列_神仙UP.png",
+"bilibili_热词系列_三连" : "https://cdn.jsdelivr.net/gh/blogimg/emotion/bilibili/热词系列_三连.png",
+"bilibili_热词系列_你币有了" : "https://cdn.jsdelivr.net/gh/blogimg/emotion/bilibili/热词系列_你币有了.png",
+"bilibili_热词系列_妙啊" : "https://cdn.jsdelivr.net/gh/blogimg/emotion/bilibili/热词系列_妙啊.png",
+"bilibili_热词系列_可以" : "https://cdn.jsdelivr.net/gh/blogimg/emotion/bilibili/热词系列_可以.png",
+"bilibili_热词系列_高产" : "https://cdn.jsdelivr.net/gh/blogimg/emotion/bilibili/热词系列_高产.png",
+"bilibili_热词系列_大师球" : "https://cdn.jsdelivr.net/gh/blogimg/emotion/bilibili/热词系列_大师球.png",
+"bilibili_热词系列_打卡" : "https://cdn.jsdelivr.net/gh/blogimg/emotion/bilibili/热词系列_打卡.png",
+"bilibili_热词系列_锤" : "https://cdn.jsdelivr.net/gh/blogimg/emotion/bilibili/热词系列_锤.png",
+"bilibili_热词系列_吹爆" : "https://cdn.jsdelivr.net/gh/blogimg/emotion/bilibili/热词系列_吹爆.png",
+"bilibili_热词系列_不愧是你" : "https://cdn.jsdelivr.net/gh/blogimg/emotion/bilibili/热词系列_不愧是你.png",
+"bilibili_热词系列_奥力给" : "https://cdn.jsdelivr.net/gh/blogimg/emotion/bilibili/热词系列_奥力给.png",
+"bilibili_热词系列_AWSL" : "https://cdn.jsdelivr.net/gh/blogimg/emotion/bilibili/热词系列_AWSL.png",
+"bilibili_热词系列_狼火" : "https://cdn.jsdelivr.net/gh/blogimg/emotion/bilibili/热词系列_狼火.png",
+
+"custom_37" : "https://cdn.jsdelivr.net/gh/blogimg/picbed@latest/2020/04/22/097cd88f446efae87cb27de38c5eed15.png",
+"custom_36" : "https://cdn.jsdelivr.net/gh/blogimg/picbed@latest/2020/04/22/ec2166501d29bc1eb7380c22944db462.png",
+"custom_35" : "https://cdn.jsdelivr.net/gh/blogimg/picbed@latest/2020/04/22/8ca39f96c182e51cd752dde464157c2e.png",
+"custom_34" : "https://cdn.jsdelivr.net/gh/blogimg/picbed@latest/2020/04/22/0a65c5dd18872b56605c08f7bae2e8c8.png",
+"custom_33" : "https://cdn.jsdelivr.net/gh/blogimg/picbed@latest/2020/04/22/ec3edbfe84684fdb1680307d261c3c7b.png",
+"custom_32" : "https://cdn.jsdelivr.net/gh/blogimg/emotion/custom/31.webp",
+"custom_31" : "https://cdn.jsdelivr.net/gh/blogimg/emotion/custom/30.gif",
+"custom_30" : "https://cdn.jsdelivr.net/gh/blogimg/emotion/custom/29.webp",
+"custom_29" : "https://cdn.jsdelivr.net/gh/blogimg/emotion/custom/28.webp",
+"custom_28" : "https://cdn.jsdelivr.net/gh/blogimg/emotion/custom/27.webp",
+"custom_27" : "https://cdn.jsdelivr.net/gh/blogimg/emotion/custom/26.webp",
+"custom_26" : "https://cdn.jsdelivr.net/gh/blogimg/emotion/custom/25.jpg",
+"custom_25" : "https://cdn.jsdelivr.net/gh/blogimg/emotion/custom/24.webp",
+"custom_24" : "https://cdn.jsdelivr.net/gh/blogimg/emotion/custom/23.webp",
+"custom_23" : "https://cdn.jsdelivr.net/gh/blogimg/emotion/custom/22.webp",
+"custom_22" : "https://cdn.jsdelivr.net/gh/blogimg/emotion/custom/21.webp",
+"custom_21" : "https://cdn.jsdelivr.net/gh/blogimg/emotion/custom/20.webp",
+"custom_20" : "https://cdn.jsdelivr.net/gh/blogimg/emotion/custom/19.webp",
+"custom_19" : "https://cdn.jsdelivr.net/gh/blogimg/emotion/custom/18.jpg",
+"custom_18" : "https://cdn.jsdelivr.net/gh/blogimg/emotion/custom/17.webp",
+"custom_17" : "https://cdn.jsdelivr.net/gh/blogimg/emotion/custom/16.webp",
+"custom_16" : "https://cdn.jsdelivr.net/gh/blogimg/emotion/custom/15.webp",
+"custom_15" : "https://cdn.jsdelivr.net/gh/blogimg/emotion/custom/14.webp",
+"custom_14" : "https://cdn.jsdelivr.net/gh/blogimg/emotion/custom/13.webp",
+"custom_13" : "https://cdn.jsdelivr.net/gh/blogimg/emotion/custom/12.webp",
+"custom_12" : "https://cdn.jsdelivr.net/gh/blogimg/emotion/custom/11.webp",
+"custom_11" : "https://cdn.jsdelivr.net/gh/blogimg/emotion/custom/10.webp",
+"custom_10" : "https://cdn.jsdelivr.net/gh/blogimg/emotion/custom/9.webp",
+"custom_9" : "https://cdn.jsdelivr.net/gh/blogimg/emotion/custom/8.webp",
+"custom_8" : "https://cdn.jsdelivr.net/gh/blogimg/emotion/custom/7.webp",
+"custom_7" : "https://cdn.jsdelivr.net/gh/blogimg/emotion/custom/6.gif",
+"custom_6" : "https://cdn.jsdelivr.net/gh/blogimg/emotion/custom/5.gif",
+"custom_5" : "https://cdn.jsdelivr.net/gh/blogimg/emotion/custom/4.jpg",
+"custom_4" : "https://cdn.jsdelivr.net/gh/blogimg/emotion/custom/3.jpg",
+"custom_3" : "https://cdn.jsdelivr.net/gh/blogimg/emotion/custom/2.webp",
+"custom_2" : "https://cdn.jsdelivr.net/gh/blogimg/emotion/custom/1.webp",
+"custom_1" : "https://cdn.jsdelivr.net/gh/blogimg/picbed@master/2020/04/19/c3164053d300cc5cca5e4dc3311842dc.png",
+"custom_0" : "https://cdn.jsdelivr.net/gh/blogimg/picbed@master/2020/04/19/6b5e768e524c8441ba66184bfdd86d4d.png",
+
+        }
+    });
+</script>
+<!-- 直达评论 -->
+<div id="to_comment" class="comment-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#vcomments" title="直达评论">
+        <i class="fas fa-comments"></i>
+    </a>
+</div>
+
+
+
+            
+			
+			
+        </div>
+    </div>
+</main>
+
+
+    <style>
+    .youpaiyunlogo {
+        height: 26px;
+        display: inline-block;
+        vertical-align: top;
+    }
+</style>
+<footer class="page-footer bg-color">
+    
+        <link rel="stylesheet" href="../libs/aplayer/APlayer.min.css">
+<style>
+    .aplayer .aplayer-lrc p {
+        
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 16px !important;
+    }
+
+    .aplayer .aplayer-lrc p.aplayer-lrc-current {
+        
+        font-size: 15px;
+        color: #42b983;
+    }
+
+    
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
+        left: -66px !important;
+    }
+
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {
+        left: 0px !important;
+    }
+
+    
+</style>
+<div class="">
+    
+    <div class="row">
+        <meting-js class="hidess col l8 offset-l2 m10 offset-m1 s12" server="netease" type="playlist" id="3155294100" fixed='true' autoplay='false' theme='#42b983' loop='all' order='list' preload='auto' volume='0.7' list-folded='true'>
+        </meting-js>
+        <style>
+            .hidess .aplayer-lrc {
+                display: none!important;
+            }
+        </style>
+    </div>
+</div>
+
+<script src="../libs/aplayer/APlayer.min.js"></script>
+<script src="../npm/meting@2/dist/Meting.min.js"></script>
+
+    
+    <div class="container row center-align" style="margin-bottom: 15px !important;">
+        <!-- 访客地图 -->
+        <div class="col s12 m3 l3 social-link" id="visitmap">
+            <a target="_blank" rel="noopener" href="javascript:;" title="访客地图"><img src="https://clustrmaps.com/map_v2.png?cl=ffffff&w=300&t=n&d=JSX4QImR_CbfKkKdutTHIpP3sfxcCP34C8RWeldK8mk&co=000000&ct=ffffff"></a>
+        </div>
+        
+        <!-- 版权信息 -->
+        <div class="col s12 m6 l6 copy-right">
+            Copyright&nbsp;&copy;
+            <span id="year">2019</span>
+            <a href="../about/index.html" target="_blank">frank_lee</a>
+            &nbsp;Powered by&nbsp;<a href="javascript:;" target="_blank">Hexo</a>
+            &nbsp;Theme&nbsp;<a href="javascript:;" target="_blank">Matery</a>
+            <br>
+            
+            <a>Cloud storage</a> service and <a>CDN</a> acceleration provider
+            <a href="javascript:;" target="_blank" title="本站CDN加速/云存储由又拍云提供">
+                <img src="../medias/youpaiyun-logo.png" class="youpaiyunlogo">
+            </a>
+            
+            <br>
+            
+            &nbsp;<i class="fas fa-chart-area"></i>&nbsp;Total number of words: &nbsp;<span class="white-color">65.2k</span>&nbsp;
+            
+            
+            
+            
+            
+            
+            <span id="busuanzi_container_site_pv">
+                &nbsp;<i class="far"></i>&nbsp;Total visits: &nbsp;<span id="busuanzi_value_site_pv" class="white-color"></span>&nbsp;
+            </span>
+            
+            
+            <br>
+            
+            <span id="sitetime">running time</span>
+            <script>
+                function siteTime() {
+                    var seconds = 1000;
+                    var minutes = seconds * 60;
+                    var hours = minutes * 60;
+                    var days = hours * 24;
+                    var years = days * 365;
+                    var today = new Date();
+                    var startYear = "2019";
+                    var startMonth = "6";
+                    var startDate = "28";
+                    var startHour = "0";
+                    var startMinute = "0";
+                    var startSecond = "0";
+                    var todayYear = today.getFullYear();
+                    var todayMonth = today.getMonth() + 1;
+                    var todayDate = today.getDate();
+                    var todayHour = today.getHours();
+                    var todayMinute = today.getMinutes();
+                    var todaySecond = today.getSeconds();
+                    var t1 = Date.UTC(startYear, startMonth, startDate, startHour, startMinute, startSecond);
+                    var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
+                    var diff = t2 - t1;
+                    var diffYears = Math.floor(diff / years);
+                    var diffDays = Math.floor((diff / days) - diffYears * 365);
+                    var diffHours = Math.floor((diff - (diffYears * 365 + diffDays) * days) / hours);
+                    var diffMinutes = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours) /
+                        minutes);
+                    var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours -
+                        diffMinutes * minutes) / seconds);
+                    if (startYear == todayYear) {
+                        document.getElementById("year").innerHTML = todayYear;
+                        document.getElementById("sitetime").innerHTML = "The site has been running for " + "<span class= 'white-color'>"+diffDays+"</span>" + " d " + "<span class= 'white-color'>"+diffHours+"</span>" +
+                            " h " + "<span class= 'white-color'>"+diffMinutes+"</span>" + " m " + "<span class= 'white-color'>"+diffSeconds+"</span>" + " s";
+                    } else {
+                        document.getElementById("year").innerHTML = startYear + " - " + todayYear;
+                        document.getElementById("sitetime").innerHTML = "The site has been running for " + "<span class= 'white-color'>"+diffYears+"</span>" + " y " + "<span class= 'white-color'>"+diffDays+"</span>" +
+                            " d " + "<span class= 'white-color'>"+diffHours+"</span>" + " h " + "<span class= 'white-color'>"+diffMinutes+"</span>" + " m " +"<span class= 'white-color'>"+ diffSeconds+"</span>" + " s";
+                    }
+                }
+                setInterval(siteTime, 1000);
+            </script>
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m3 l3 social-link social-statis">
+    <a href="javascript:;" class="tooltipped" target="_blank" data-tooltip="GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:mailto:dyfeliwa@gmail.com" class="tooltipped" target="_blank" data-tooltip="邮件" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+    <a href="javascript:;" class="tooltipped" target="_blank" data-tooltip="QQ 2536194075" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+</div>
+    </div>
+    
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字" class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="../js/search.js"></script>
+<script type="text/javascript">
+$(function () {
+    searchFunc("/search.xml", 'searchInput', 'searchResult');
+});
+</script>
+
+    
+<!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="javascript:;">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+
+
+
+    <script src="../libs/materialize/materialize.min.js"></script>
+    <script src="../libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="../libs/aos/aos.js"></script>
+    <script src="../libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="../libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="../js/matery.js"></script>
+    
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    
+    <script async="" src="../libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <script src="../libs/instantpage/instantpage.js" type="module"></script>
+    
+
+    <!--动态线条背景-->
+    <script type="text/javascript" color="122 103 238" opacity='0.7' zindex="-2" count="200" src="../canvas-nest.js/1.0.0/canvas-nest.min.js">
+    </script>
+ 
+    <script type="text/javascript" src="../js/click_show_text.js"></script>
+    <script src="../js/linkcard.js"></script>
+
+    <script src="../js/activate-power-mode.js"></script>
+    <script>
+        POWERMODE.colorful = true; // make power mode colorful
+        POWERMODE.shake = false; // turn off shake
+        document.body.addEventListener('input', POWERMODE);
+    </script>
+</body>
+</html>

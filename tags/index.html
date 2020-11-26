@@ -1,0 +1,1553 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="标签, frank_lee,itsfrank_lee,hexo,html,css,javascript,jquery,React,Vue,nodeJs,H5,前端,博客,番茄鱼啊">
+    <meta name="description" content="本站主要分享H5前端知识和笔记，博客搭建技巧，人生长谈，风花雪月之事。欢迎各位来访互相学习！奥利给啊！！！">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="baidu-site-verification" content="code-8VjAnGhv8m">
+    <meta name="google-site-verification" content="An02eAw6rCWBVutF85tRr02GvZox5D4Pqd9PKFRzvBs">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>标签 | itsfrank_lee</title>
+    
+
+    <link rel="stylesheet" type="text/css" href="../libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="../libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="../libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="../libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="../libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="../css/matery.css">
+    <link rel="stylesheet" type="text/css" href="../css/my.css">
+    <link type='text/css' rel="stylesheet" href="../npm/font-awesome@4.7.0/css/font-awesome.min.css">
+    
+    <script src="../libs/jquery/jquery.min.js"></script>
+    <script>
+        (function(){
+            var bp = document.createElement('script');
+            var curProtocol = window.location.protocol.split(':')[0];
+            if (curProtocol === 'https'){
+           bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+          }
+          else{
+          bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+          }
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(bp, s);
+        })();
+        </script>
+        
+<meta name="generator" content="Hexo 5.0.2">
+<link rel="stylesheet" href="../css/prism-tomorrow.css" type="text/css"></head>
+
+
+<body>
+    <script>
+        if (localStorage.getItem('dark') === '1') {
+        document.body.classList.add('dark');
+        }
+        //  else if (new Date().getHours() >= 22 || new Date().getHours() < 7) {
+        // document.body.classList.add('dark');
+        // } 
+        else if (matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+        }
+    </script>
+    <a onclick="switchNightMode()" id="sma">
+        <i class="fa fa-moon-o" id="nightMode" aria-hidden="true"></i>
+    </a>
+    
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="../index.html" class="waves-effect waves-light">
+                    
+                    <img src="../medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">itsfrank_lee</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="../index.html" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="../categories/index.html" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="javascript:;" class="waves-effect waves-light">
+
+      
+      <span>归档</span>
+      <i class="fas fa-chevron-down" aria-hidden="true" style="zoom: 0.6;"></i>
+    </a>
+    <ul class="sub-nav menus_item_child ">
+      
+      <li>
+        <a href="">
+          
+          <span>标签</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="../archives/index.html">
+          
+          <span>日历</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="../count/index.html">
+          
+          <span>统计</span>
+        </a>
+      </li>
+      
+    </ul>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="../about/index.html" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="javascript:;" class="waves-effect waves-light">
+
+      
+      <span>清单</span>
+      <i class="fas fa-chevron-down" aria-hidden="true" style="zoom: 0.6;"></i>
+    </a>
+    <ul class="sub-nav menus_item_child ">
+      
+      <li>
+        <a href="../videos/index.html">
+          
+          <span>vlog</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="../musics/index.html">
+          
+          <span>music</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="../gallery/index.html">
+          
+          <span>相册</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="../essay/index.html">
+          
+          <span>随笔</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="../tiktok/index.html">
+          
+          <span>tiktok</span>
+        </a>
+      </li>
+      
+    </ul>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="../shuoshuo/index.html" class="waves-effect waves-light">
+      
+      <span>说说</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="../contact/index.html" class="waves-effect waves-light">
+      
+      <span>留言板</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="javascript:;" class="waves-effect waves-light">
+
+      
+      <span>链接库</span>
+      <i class="fas fa-chevron-down" aria-hidden="true" style="zoom: 0.6;"></i>
+    </a>
+    <ul class="sub-nav menus_item_child ">
+      
+      <li>
+        <a href="../friends/index.html">
+          
+          <span>友情链接</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="../collection/index.html">
+          
+          <span>网址收藏</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="../sitenavigation/index.html">
+          
+          <span>网址导航</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="../tenfour/homepage/index.html">
+          
+          <span>TenFour</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="../olympus/index.html">
+          
+          <span>奥林巴斯</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="../lakers-championship/index.html">
+          
+          <span>湖人总冠军</span>
+        </a>
+      </li>
+      
+    </ul>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="javascript:;" class="waves-effect waves-light">
+
+      
+      <span>实验室</span>
+      <i class="fas fa-chevron-down" aria-hidden="true" style="zoom: 0.6;"></i>
+    </a>
+    <ul class="sub-nav menus_item_child ">
+      
+      <li>
+        <a href="../demolist/index.html">
+          
+          <span>demolist</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="../hotreview/index.html">
+          
+          <span>hotreview</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="../todolist/index.html">
+          
+          <span>todolist</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="../ticktack/index.html">
+          
+          <span>ticktack</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="../chromedragon/index.html">
+          
+          <span>chromedragon</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="../vote/index.html">
+          
+          <span>opensourcevote</span>
+        </a>
+      </li>
+      
+    </ul>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="../medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">itsfrank_lee</div>
+        <div class="logo-desc">
+            
+            本站主要分享H5前端知识和笔记，博客搭建技巧，人生长谈，风花雪月之事。欢迎各位来访互相学习！奥利给啊！！！
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="../index.html" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="../categories/index.html" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="javascript:;">
+			
+				<i class="fas fa-fw"></i>
+			
+			归档
+			<span class="m-icon"><i class="fas fa-chevron-right"></i></span>
+		</a>
+            <ul style="background:  ;">
+              
+                <li>
+
+                  <a href="" style="margin-left:75px">
+				  
+		          <span>标签</span>
+                  </a>
+                </li>
+              
+                <li>
+
+                  <a href="../archives/index.html" style="margin-left:75px">
+				  
+		          <span>日历</span>
+                  </a>
+                </li>
+              
+                <li>
+
+                  <a href="../count/index.html" style="margin-left:75px">
+				  
+		          <span>统计</span>
+                  </a>
+                </li>
+              
+            </ul>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="../about/index.html" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="javascript:;">
+			
+				<i class="fas fa-fw"></i>
+			
+			清单
+			<span class="m-icon"><i class="fas fa-chevron-right"></i></span>
+		</a>
+            <ul style="background:  ;">
+              
+                <li>
+
+                  <a href="../videos/index.html" style="margin-left:75px">
+				  
+		          <span>vlog</span>
+                  </a>
+                </li>
+              
+                <li>
+
+                  <a href="../musics/index.html" style="margin-left:75px">
+				  
+		          <span>music</span>
+                  </a>
+                </li>
+              
+                <li>
+
+                  <a href="../gallery/index.html" style="margin-left:75px">
+				  
+		          <span>相册</span>
+                  </a>
+                </li>
+              
+                <li>
+
+                  <a href="../essay/index.html" style="margin-left:75px">
+				  
+		          <span>随笔</span>
+                  </a>
+                </li>
+              
+                <li>
+
+                  <a href="../tiktok/index.html" style="margin-left:75px">
+				  
+		          <span>tiktok</span>
+                  </a>
+                </li>
+              
+            </ul>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="../shuoshuo/index.html" class="waves-effect waves-light">
+			
+				<i class="fas fa-fw"></i>
+			
+			说说
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="../contact/index.html" class="waves-effect waves-light">
+			
+				<i class="fas fa-fw"></i>
+			
+			留言板
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="javascript:;">
+			
+				<i class="fas fa-fw"></i>
+			
+			链接库
+			<span class="m-icon"><i class="fas fa-chevron-right"></i></span>
+		</a>
+            <ul style="background:  ;">
+              
+                <li>
+
+                  <a href="../friends/index.html" style="margin-left:75px">
+				  
+		          <span>友情链接</span>
+                  </a>
+                </li>
+              
+                <li>
+
+                  <a href="../collection/index.html" style="margin-left:75px">
+				  
+		          <span>网址收藏</span>
+                  </a>
+                </li>
+              
+                <li>
+
+                  <a href="../sitenavigation/index.html" style="margin-left:75px">
+				  
+		          <span>网址导航</span>
+                  </a>
+                </li>
+              
+                <li>
+
+                  <a href="../tenfour/homepage/index.html" style="margin-left:75px">
+				  
+		          <span>TenFour</span>
+                  </a>
+                </li>
+              
+                <li>
+
+                  <a href="../olympus/index.html" style="margin-left:75px">
+				  
+		          <span>奥林巴斯</span>
+                  </a>
+                </li>
+              
+                <li>
+
+                  <a href="../lakers-championship/index.html" style="margin-left:75px">
+				  
+		          <span>湖人总冠军</span>
+                  </a>
+                </li>
+              
+            </ul>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="javascript:;">
+			
+				<i class="fas fa-fw"></i>
+			
+			实验室
+			<span class="m-icon"><i class="fas fa-chevron-right"></i></span>
+		</a>
+            <ul style="background:  ;">
+              
+                <li>
+
+                  <a href="../demolist/index.html" style="margin-left:75px">
+				  
+		          <span>demolist</span>
+                  </a>
+                </li>
+              
+                <li>
+
+                  <a href="../hotreview/index.html" style="margin-left:75px">
+				  
+		          <span>hotreview</span>
+                  </a>
+                </li>
+              
+                <li>
+
+                  <a href="../todolist/index.html" style="margin-left:75px">
+				  
+		          <span>todolist</span>
+                  </a>
+                </li>
+              
+                <li>
+
+                  <a href="../ticktack/index.html" style="margin-left:75px">
+				  
+		          <span>ticktack</span>
+                  </a>
+                </li>
+              
+                <li>
+
+                  <a href="../chromedragon/index.html" style="margin-left:75px">
+				  
+		          <span>chromedragon</span>
+                  </a>
+                </li>
+              
+                <li>
+
+                  <a href="../vote/index.html" style="margin-left:75px">
+				  
+		          <span>opensourcevote</span>
+                  </a>
+                </li>
+              
+            </ul>
+          
+        </li>
+        
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+    </nav>
+
+</header>
+
+    <div class="bg-cover pd-header about-cover">
+    <div class="container">
+    <div class="row">
+    <div class="col s10 offset-s1 m8 offset-m2 l8 offset-l2">
+        <div class="brand">
+            <div class="title center-align">
+                
+                    tags
+                 
+            </div>
+
+            <div class="description center-align">
+                
+                <span id="subtitle"></span>
+                <script src="../npm/typed.js@2.0.js"></script>
+                <script>
+                    var typed = new Typed("#subtitle", {
+                        strings: ['坚持打卡，有源源就有我！',''],
+                        startDelay: 200,
+                        typeSpeed: 120,
+                        loop: true,
+                        backSpeed: 50,
+                        showCursor: true
+                    });
+                </script>
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script>
+    // 每天切换 banner 图.  Switch banner image every day.
+    var bannerUrl = "/medias/banner/" + new Date().getDay() + '.jpg';
+    $('.bg-cover').css('background-image', 'url(' + bannerUrl + ')');
+</script>
+
+
+    </div>
+</div>
+<style>
+    #sma {
+        bottom: 150px;
+    }
+    .bg-cover {
+        background-image: url("../medias/banner/tagbg.png")!important;
+    }
+    .bg-cover::before {
+        background-image: url(../gh/moezx/cdn@3.1.9/img/Sakura/images/grid.png);
+    }
+    body.dark .bg-cover .description {
+        opacity: 0.8;
+    }
+    body.dark .bg-cover .title {
+        color: rgba(255, 255, 255, 0.85);
+    }
+
+
+</style>
+<main class="content">
+
+    
+
+<div id="tags" class="container chip-container">
+    <div class="card">
+        <div class="card-content">
+            <div class="tag-title center-align">
+                <i class="fas fa-tags"></i>&nbsp;&nbsp;文章标签
+
+                <div class="notice">
+                    <div class="notice-content" id="poem"></div>
+                    <div class="notice-content" id="info"></div>
+                </div>
+                <script>
+                    $.get("https://v1.hitokoto.cn?c=d&c=h",function(data,status){if(status=='success'){$('#poem').html(data.hitokoto);if(data.from_who!=null){$('#info').html(data.from_who+" · "+"《 "+data.from+" 》");}else{$('#info').html(" “ "+data.from+" ” ");}}else{$('#poem').html("获取出错啦");}});
+                </script>
+            </div>
+            <div class="tag-chips">
+                
+                
+                <a href="移动端布局/index.html" title="移动端布局: 1">
+                    <span class="chip center-align waves-effect waves-light
+                     chip-default " data-tagname="移动端布局" style="background-color: #F9EBEA;">🔖&nbsp;移动端布局
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="chrome调试/index.html" title="chrome调试: 1">
+                    <span class="chip center-align waves-effect waves-light
+                     chip-default " data-tagname="chrome调试" style="background-color: #F5EEF8;">🔖&nbsp;chrome调试
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="git/index.html" title="git: 1">
+                    <span class="chip center-align waves-effect waves-light
+                     chip-default " data-tagname="git" style="background-color: #D5F5E3;">🔖&nbsp;git
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="Harmonyos/index.html" title="Harmonyos: 1">
+                    <span class="chip center-align waves-effect waves-light
+                     chip-default " data-tagname="Harmonyos" style="background-color: #E8F8F5;">🔖&nbsp;Harmonyos
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="json/index.html" title="json: 1">
+                    <span class="chip center-align waves-effect waves-light
+                     chip-default " data-tagname="json" style="background-color: #FEF9E7;">🔖&nbsp;json
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="string对象方法/index.html" title="string对象方法: 1">
+                    <span class="chip center-align waves-effect waves-light
+                     chip-default " data-tagname="string对象方法" style="background-color: #F8F9F9;">🔖&nbsp;string对象方法
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="JS正则表达式/index.html" title="JS正则表达式: 1">
+                    <span class="chip center-align waves-effect waves-light
+                     chip-default " data-tagname="JS正则表达式" style="background-color: #82E0AA;">🔖&nbsp;JS正则表达式
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="vue-router/index.html" title="vue-router: 1">
+                    <span class="chip center-align waves-effect waves-light
+                     chip-default " data-tagname="vue-router" style="background-color: #D7BDE2;">🔖&nbsp;vue-router
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="about-me/index.html" title="about-me: 1">
+                    <span class="chip center-align waves-effect waves-light
+                     chip-default " data-tagname="about-me" style="background-color: #A3E4D7;">🔖&nbsp;about-me
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="express应用程序生成器/index.html" title="express应用程序生成器: 1">
+                    <span class="chip center-align waves-effect waves-light
+                     chip-default " data-tagname="express应用程序生成器" style="background-color: #85C1E9;">🔖&nbsp;express应用程序生成器
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="gulp/index.html" title="gulp: 1">
+                    <span class="chip center-align waves-effect waves-light
+                     chip-default " data-tagname="gulp" style="background-color: #F8C471;">🔖&nbsp;gulp
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="jQuery/index.html" title="jQuery: 1">
+                    <span class="chip center-align waves-effect waves-light
+                     chip-default " data-tagname="jQuery" style="background-color: #F9E79F;">🔖&nbsp;jQuery
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="ssh-key/index.html" title="ssh-key: 1">
+                    <span class="chip center-align waves-effect waves-light
+                     chip-default " data-tagname="ssh-key" style="background-color: #FEF9E7;">🔖&nbsp;ssh-key
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="vscode使用/index.html" title="vscode使用: 1">
+                    <span class="chip center-align waves-effect waves-light
+                     chip-default " data-tagname="vscode使用" style="background-color: #D7BDE2;">🔖&nbsp;vscode使用
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="hexo博客note标签美化/index.html" title="hexo博客note标签美化: 1">
+                    <span class="chip center-align waves-effect waves-light
+                     chip-default " data-tagname="hexo博客note标签美化" style="background-color: #85C1E9;">🔖&nbsp;hexo博客note标签美化
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="hexo博客增加每日一言/index.html" title="hexo博客增加每日一言: 1">
+                    <span class="chip center-align waves-effect waves-light
+                     chip-default " data-tagname="hexo博客增加每日一言" style="background-color: #FEF9E7;">🔖&nbsp;hexo博客增加每日一言
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="hexo博客增加视频vlog页面/index.html" title="hexo博客增加视频vlog页面: 1">
+                    <span class="chip center-align waves-effect waves-light
+                     chip-default " data-tagname="hexo博客增加视频vlog页面" style="background-color: #F5EEF8;">🔖&nbsp;hexo博客增加视频vlog页面
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="hexo博客适配全局深色模式/index.html" title="hexo博客适配全局深色模式: 1">
+                    <span class="chip center-align waves-effect waves-light
+                     chip-default " data-tagname="hexo博客适配全局深色模式" style="background-color: #F9E79F;">🔖&nbsp;hexo博客适配全局深色模式
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="标签/index.html" title="标签: 1">
+                    <span class="chip center-align waves-effect waves-light
+                     chip-default " data-tagname="标签" style="background-color: #D7BDE2;">🔖&nbsp;标签
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="随笔/index.html" title="随笔: 4">
+                    <span class="chip center-align waves-effect waves-light
+                     chip-default " data-tagname="随笔" style="background-color: #FFF;">🔖&nbsp;随笔
+                        <span class="tag-length">4</span>
+                    </span>
+                </a>
+                
+                
+                <a href="Chrome小恐龙跑酷游戏/index.html" title="Chrome小恐龙跑酷游戏: 1">
+                    <span class="chip center-align waves-effect waves-light
+                     chip-default " data-tagname="Chrome小恐龙跑酷游戏" style="background-color: #D7BDE2;">🔖&nbsp;Chrome小恐龙跑酷游戏
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="项目上线流程/index.html" title="项目上线流程: 1">
+                    <span class="chip center-align waves-effect waves-light
+                     chip-default " data-tagname="项目上线流程" style="background-color: #FEF9E7;">🔖&nbsp;项目上线流程
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="CSS-SCSS代码规范/index.html" title="CSS-SCSS代码规范: 1">
+                    <span class="chip center-align waves-effect waves-light
+                     chip-default " data-tagname="CSS-SCSS代码规范" style="background-color: #FEF9E7;">🔖&nbsp;CSS-SCSS代码规范
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="增加瀑布流相册页面/index.html" title="增加瀑布流相册页面: 1">
+                    <span class="chip center-align waves-effect waves-light
+                     chip-default " data-tagname="增加瀑布流相册页面" style="background-color: #F8C471;">🔖&nbsp;增加瀑布流相册页面
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="git-push/index.html" title="git push: 1">
+                    <span class="chip center-align waves-effect waves-light
+                     chip-default " data-tagname="git push" style="background-color: #F8F9F9;">🔖&nbsp;git push
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="some-funny-demo/index.html" title="some-funny-demo: 1">
+                    <span class="chip center-align waves-effect waves-light
+                     chip-default " data-tagname="some-funny-demo" style="background-color: #A3E4D7;">🔖&nbsp;some-funny-demo
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="this-call-apply-bind方法/index.html" title="this call/apply/bind方法: 1">
+                    <span class="chip center-align waves-effect waves-light
+                     chip-default " data-tagname="this call/apply/bind方法" style="background-color: #FEF9E7;">🔖&nbsp;this call/apply/bind方法
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="js数组和稀疏数组/index.html" title="js数组和稀疏数组: 1">
+                    <span class="chip center-align waves-effect waves-light
+                     chip-default " data-tagname="js数组和稀疏数组" style="background-color: #F9EBEA;">🔖&nbsp;js数组和稀疏数组
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="NodeJS使用流程和express/index.html" title="NodeJS使用流程和express: 1">
+                    <span class="chip center-align waves-effect waves-light
+                     chip-default " data-tagname="NodeJS使用流程和express" style="background-color: #D5F5E3;">🔖&nbsp;NodeJS使用流程和express
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="JS函数/index.html" title="JS函数: 1">
+                    <span class="chip center-align waves-effect waves-light
+                     chip-default " data-tagname="JS函数" style="background-color: #F8F9F9;">🔖&nbsp;JS函数
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="闭包，继承/index.html" title="闭包，继承: 1">
+                    <span class="chip center-align waves-effect waves-light
+                     chip-default " data-tagname="闭包，继承" style="background-color: #F8C471;">🔖&nbsp;闭包，继承
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="math，date，对象/index.html" title="math，date，对象: 1">
+                    <span class="chip center-align waves-effect waves-light
+                     chip-default " data-tagname="math，date，对象" style="background-color: #D7BDE2;">🔖&nbsp;math，date，对象
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="对象，类，内置对象/index.html" title="对象，类，内置对象: 1">
+                    <span class="chip center-align waves-effect waves-light
+                     chip-default " data-tagname="对象，类，内置对象" style="background-color: #F8C471;">🔖&nbsp;对象，类，内置对象
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="PHP，Mysql/index.html" title="PHP，Mysql: 1">
+                    <span class="chip center-align waves-effect waves-light
+                     chip-default " data-tagname="PHP，Mysql" style="background-color: #F9E79F;">🔖&nbsp;PHP，Mysql
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="http请求，http响应/index.html" title="http请求，http响应: 1">
+                    <span class="chip center-align waves-effect waves-light
+                     chip-default " data-tagname="http请求，http响应" style="background-color: #F8C471;">🔖&nbsp;http请求，http响应
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="Git使用流程，Git公钥配置/index.html" title="Git使用流程，Git公钥配置: 1">
+                    <span class="chip center-align waves-effect waves-light
+                     chip-default " data-tagname="Git使用流程，Git公钥配置" style="background-color: #85C1E9;">🔖&nbsp;Git使用流程，Git公钥配置
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="git报错error：spawn-failed/index.html" title="git报错error：spawn failed: 1">
+                    <span class="chip center-align waves-effect waves-light
+                     chip-default " data-tagname="git报错error：spawn failed" style="background-color: #A3E4D7;">🔖&nbsp;git报错error：spawn failed
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="cookie，path，expires/index.html" title="cookie，path，expires: 1">
+                    <span class="chip center-align waves-effect waves-light
+                     chip-default " data-tagname="cookie，path，expires" style="background-color: #D7BDE2;">🔖&nbsp;cookie，path，expires
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="todolist页面/index.html" title="todolist页面: 1">
+                    <span class="chip center-align waves-effect waves-light
+                     chip-default " data-tagname="todolist页面" style="background-color: #A3E4D7;">🔖&nbsp;todolist页面
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="文章分类页面样式优化/index.html" title="文章分类页面样式优化: 1">
+                    <span class="chip center-align waves-effect waves-light
+                     chip-default " data-tagname="文章分类页面样式优化" style="background-color: #F8F9F9;">🔖&nbsp;文章分类页面样式优化
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="随笔页面-仿纸张样式/index.html" title="随笔页面(仿纸张样式): 1">
+                    <span class="chip center-align waves-effect waves-light
+                     chip-default " data-tagname="随笔页面(仿纸张样式)" style="background-color: #FFF;">🔖&nbsp;随笔页面(仿纸张样式)
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="Aplayer和MetingJS插件/index.html" title="Aplayer和MetingJS插件: 1">
+                    <span class="chip center-align waves-effect waves-light
+                     chip-default " data-tagname="Aplayer和MetingJS插件" style="background-color: #FFF;">🔖&nbsp;Aplayer和MetingJS插件
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="while，do-while，for/index.html" title="while，do/while，for: 1">
+                    <span class="chip center-align waves-effect waves-light
+                     chip-default " data-tagname="while，do/while，for" style="background-color: #FEF9E7;">🔖&nbsp;while，do/while，for
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="ES5，arguments/index.html" title="ES5，arguments: 1">
+                    <span class="chip center-align waves-effect waves-light
+                     chip-default " data-tagname="ES5，arguments" style="background-color: #D5F5E3;">🔖&nbsp;ES5，arguments
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="ES6，let-const，箭头函数/index.html" title="ES6，let/const，箭头函数: 1">
+                    <span class="chip center-align waves-effect waves-light
+                     chip-default " data-tagname="ES6，let/const，箭头函数" style="background-color: #85C1E9;">🔖&nbsp;ES6，let/const，箭头函数
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="冒泡选择快速排序/index.html" title="冒泡选择快速排序: 1">
+                    <span class="chip center-align waves-effect waves-light
+                     chip-default " data-tagname="冒泡选择快速排序" style="background-color: #F9EBEA;">🔖&nbsp;冒泡选择快速排序
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="事件绑定监听委托/index.html" title="事件绑定监听委托: 1">
+                    <span class="chip center-align waves-effect waves-light
+                     chip-default " data-tagname="事件绑定监听委托" style="background-color: #D7BDE2;">🔖&nbsp;事件绑定监听委托
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="鼠标-键盘-阻止默认/index.html" title="鼠标/键盘/阻止默认: 1">
+                    <span class="chip center-align waves-effect waves-light
+                     chip-default " data-tagname="鼠标/键盘/阻止默认" style="background-color: #F9E79F;">🔖&nbsp;鼠标/键盘/阻止默认
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="this-变量生命周期/index.html" title="this/变量生命周期: 1">
+                    <span class="chip center-align waves-effect waves-light
+                     chip-default " data-tagname="this/变量生命周期" style="background-color: #85C1E9;">🔖&nbsp;this/变量生命周期
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="冒泡-捕获-监听-委托/index.html" title="冒泡/捕获/监听/委托: 1">
+                    <span class="chip center-align waves-effect waves-light
+                     chip-default " data-tagname="冒泡/捕获/监听/委托" style="background-color: #D5F5E3;">🔖&nbsp;冒泡/捕获/监听/委托
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="DOM-节点-操作/index.html" title="DOM/节点/操作: 1">
+                    <span class="chip center-align waves-effect waves-light
+                     chip-default " data-tagname="DOM/节点/操作" style="background-color: #D5F5E3;">🔖&nbsp;DOM/节点/操作
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="BOM-定时器-window/index.html" title="BOM/定时器/window: 1">
+                    <span class="chip center-align waves-effect waves-light
+                     chip-default " data-tagname="BOM/定时器/window" style="background-color: #E8F8F5;">🔖&nbsp;BOM/定时器/window
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="ifelse-switchcase/index.html" title="ifelse/switchcase: 1">
+                    <span class="chip center-align waves-effect waves-light
+                     chip-default " data-tagname="ifelse/switchcase" style="background-color: #F8C471;">🔖&nbsp;ifelse/switchcase
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="构造-原型-封装-继承-多态/index.html" title="构造/原型/封装/继承/多态: 1">
+                    <span class="chip center-align waves-effect waves-light
+                     chip-default " data-tagname="构造/原型/封装/继承/多态" style="background-color: #D5F5E3;">🔖&nbsp;构造/原型/封装/继承/多态
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="markdown-图片-音视频/index.html" title="markdown/图片/音视频: 1">
+                    <span class="chip center-align waves-effect waves-light
+                     chip-default " data-tagname="markdown/图片/音视频" style="background-color: #FEF9E7;">🔖&nbsp;markdown/图片/音视频
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="节点-文档碎片-DOM尺寸/index.html" title="节点/文档碎片/DOM尺寸: 1">
+                    <span class="chip center-align waves-effect waves-light
+                     chip-default " data-tagname="节点/文档碎片/DOM尺寸" style="background-color: #F8C471;">🔖&nbsp;节点/文档碎片/DOM尺寸
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="ajax-cors-jsonp-GET-POST/index.html" title="ajax/cors/jsonp/GET/POST: 1">
+                    <span class="chip center-align waves-effect waves-light
+                     chip-default " data-tagname="ajax/cors/jsonp/GET/POST" style="background-color: #FEF9E7;">🔖&nbsp;ajax/cors/jsonp/GET/POST
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="模块化-AMD-CMD/index.html" title="模块化/AMD/CMD: 1">
+                    <span class="chip center-align waves-effect waves-light
+                     chip-default " data-tagname="模块化/AMD/CMD" style="background-color: #82E0AA;">🔖&nbsp;模块化/AMD/CMD
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="NodeJS-file-http模块/index.html" title="NodeJS/file/http模块: 1">
+                    <span class="chip center-align waves-effect waves-light
+                     chip-default " data-tagname="NodeJS/file/http模块" style="background-color: #F9E79F;">🔖&nbsp;NodeJS/file/http模块
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="工厂-代理模式（proxy）/index.html" title="工厂/代理模式（proxy）: 1">
+                    <span class="chip center-align waves-effect waves-light
+                     chip-default " data-tagname="工厂/代理模式（proxy）" style="background-color: #D7BDE2;">🔖&nbsp;工厂/代理模式（proxy）
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="社会语录-网抑云热评api/index.html" title="社会语录/网抑云热评api: 1">
+                    <span class="chip center-align waves-effect waves-light
+                     chip-default " data-tagname="社会语录/网抑云热评api" style="background-color: #F5EEF8;">🔖&nbsp;社会语录/网抑云热评api
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="JS获取当前页面URL/index.html" title="JS获取当前页面URL: 1">
+                    <span class="chip center-align waves-effect waves-light
+                     chip-default " data-tagname="JS获取当前页面URL" style="background-color: #FFF;">🔖&nbsp;JS获取当前页面URL
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="浏览器地址栏输入url发生的事/index.html" title="浏览器地址栏输入url发生的事: 1">
+                    <span class="chip center-align waves-effect waves-light
+                     chip-default " data-tagname="浏览器地址栏输入url发生的事" style="background-color: #F5EEF8;">🔖&nbsp;浏览器地址栏输入url发生的事
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="防抖-节流-懒-预加载-CDN/index.html" title="防抖/节流/懒/预加载/CDN: 1">
+                    <span class="chip center-align waves-effect waves-light
+                     chip-default " data-tagname="防抖/节流/懒/预加载/CDN" style="background-color: #85C1E9;">🔖&nbsp;防抖/节流/懒/预加载/CDN
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="React初识/index.html" title="React初识: 1">
+                    <span class="chip center-align waves-effect waves-light
+                     chip-default " data-tagname="React初识" style="background-color: #F9EBEA;">🔖&nbsp;React初识
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="Vue初识/index.html" title="Vue初识: 1">
+                    <span class="chip center-align waves-effect waves-light
+                     chip-default " data-tagname="Vue初识" style="background-color: #FEF9E7;">🔖&nbsp;Vue初识
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="React生命周期/index.html" title="React生命周期: 1">
+                    <span class="chip center-align waves-effect waves-light
+                     chip-default " data-tagname="React生命周期" style="background-color: #82E0AA;">🔖&nbsp;React生命周期
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="Olympus奥林巴斯相机/index.html" title="Olympus奥林巴斯相机: 1">
+                    <span class="chip center-align waves-effect waves-light
+                     chip-default " data-tagname="Olympus奥林巴斯相机" style="background-color: #F8C471;">🔖&nbsp;Olympus奥林巴斯相机
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+    <link rel="stylesheet" type="text/css" href="../libs/jqcloud/jqcloud.css">
+<style type="text/css">
+    #tag-wordcloud {
+        width: 100%;
+        height: 300px;
+    }
+</style>
+
+<div class="container" data-aos="fade-up">
+    <div class="card">
+        <div id="tag-wordcloud" class="card-content"></div>
+    </div>
+</div>
+
+<script type="text/javascript" src="../libs/jqcloud/jqcloud-1.0.4.min.js"></script>
+<script type="text/javascript">
+    
+
+    $('#tag-wordcloud').jQCloud([{"text":"移动端布局","weight":1,"link":"/tags/移动端布局/"},{"text":"chrome调试","weight":1,"link":"/tags/chrome调试/"},{"text":"git","weight":1,"link":"/tags/git/"},{"text":"Harmonyos","weight":1,"link":"/tags/Harmonyos/"},{"text":"json","weight":1,"link":"/tags/json/"},{"text":"string对象方法","weight":1,"link":"/tags/string对象方法/"},{"text":"JS正则表达式","weight":1,"link":"/tags/JS正则表达式/"},{"text":"vue-router","weight":1,"link":"/tags/vue-router/"},{"text":"about-me","weight":1,"link":"/tags/about-me/"},{"text":"express应用程序生成器","weight":1,"link":"/tags/express应用程序生成器/"},{"text":"gulp","weight":1,"link":"/tags/gulp/"},{"text":"jQuery","weight":1,"link":"/tags/jQuery/"},{"text":"ssh-key","weight":1,"link":"/tags/ssh-key/"},{"text":"vscode使用","weight":1,"link":"/tags/vscode使用/"},{"text":"hexo博客note标签美化","weight":1,"link":"/tags/hexo博客note标签美化/"},{"text":"hexo博客增加每日一言","weight":1,"link":"/tags/hexo博客增加每日一言/"},{"text":"hexo博客增加视频vlog页面","weight":1,"link":"/tags/hexo博客增加视频vlog页面/"},{"text":"hexo博客适配全局深色模式","weight":1,"link":"/tags/hexo博客适配全局深色模式/"},{"text":"标签","weight":1,"link":"/tags/标签/"},{"text":"随笔","weight":4,"link":"/tags/随笔/"},{"text":"Chrome小恐龙跑酷游戏","weight":1,"link":"/tags/Chrome小恐龙跑酷游戏/"},{"text":"项目上线流程","weight":1,"link":"/tags/项目上线流程/"},{"text":"CSS-SCSS代码规范","weight":1,"link":"/tags/CSS-SCSS代码规范/"},{"text":"增加瀑布流相册页面","weight":1,"link":"/tags/增加瀑布流相册页面/"},{"text":"git push","weight":1,"link":"/tags/git-push/"},{"text":"some-funny-demo","weight":1,"link":"/tags/some-funny-demo/"},{"text":"this call/apply/bind方法","weight":1,"link":"/tags/this-call-apply-bind方法/"},{"text":"js数组和稀疏数组","weight":1,"link":"/tags/js数组和稀疏数组/"},{"text":"NodeJS使用流程和express","weight":1,"link":"/tags/NodeJS使用流程和express/"},{"text":"JS函数","weight":1,"link":"/tags/JS函数/"},{"text":"闭包，继承","weight":1,"link":"/tags/闭包，继承/"},{"text":"math，date，对象","weight":1,"link":"/tags/math，date，对象/"},{"text":"对象，类，内置对象","weight":1,"link":"/tags/对象，类，内置对象/"},{"text":"PHP，Mysql","weight":1,"link":"/tags/PHP，Mysql/"},{"text":"http请求，http响应","weight":1,"link":"/tags/http请求，http响应/"},{"text":"Git使用流程，Git公钥配置","weight":1,"link":"/tags/Git使用流程，Git公钥配置/"},{"text":"git报错error：spawn failed","weight":1,"link":"/tags/git报错error：spawn-failed/"},{"text":"cookie，path，expires","weight":1,"link":"/tags/cookie，path，expires/"},{"text":"todolist页面","weight":1,"link":"/tags/todolist页面/"},{"text":"文章分类页面样式优化","weight":1,"link":"/tags/文章分类页面样式优化/"},{"text":"随笔页面(仿纸张样式)","weight":1,"link":"/tags/随笔页面-仿纸张样式/"},{"text":"Aplayer和MetingJS插件","weight":1,"link":"/tags/Aplayer和MetingJS插件/"},{"text":"while，do/while，for","weight":1,"link":"/tags/while，do-while，for/"},{"text":"ES5，arguments","weight":1,"link":"/tags/ES5，arguments/"},{"text":"ES6，let/const，箭头函数","weight":1,"link":"/tags/ES6，let-const，箭头函数/"},{"text":"冒泡选择快速排序","weight":1,"link":"/tags/冒泡选择快速排序/"},{"text":"事件绑定监听委托","weight":1,"link":"/tags/事件绑定监听委托/"},{"text":"鼠标/键盘/阻止默认","weight":1,"link":"/tags/鼠标-键盘-阻止默认/"},{"text":"this/变量生命周期","weight":1,"link":"/tags/this-变量生命周期/"},{"text":"冒泡/捕获/监听/委托","weight":1,"link":"/tags/冒泡-捕获-监听-委托/"},{"text":"DOM/节点/操作","weight":1,"link":"/tags/DOM-节点-操作/"},{"text":"BOM/定时器/window","weight":1,"link":"/tags/BOM-定时器-window/"},{"text":"ifelse/switchcase","weight":1,"link":"/tags/ifelse-switchcase/"},{"text":"构造/原型/封装/继承/多态","weight":1,"link":"/tags/构造-原型-封装-继承-多态/"},{"text":"markdown/图片/音视频","weight":1,"link":"/tags/markdown-图片-音视频/"},{"text":"节点/文档碎片/DOM尺寸","weight":1,"link":"/tags/节点-文档碎片-DOM尺寸/"},{"text":"ajax/cors/jsonp/GET/POST","weight":1,"link":"/tags/ajax-cors-jsonp-GET-POST/"},{"text":"模块化/AMD/CMD","weight":1,"link":"/tags/模块化-AMD-CMD/"},{"text":"NodeJS/file/http模块","weight":1,"link":"/tags/NodeJS-file-http模块/"},{"text":"工厂/代理模式（proxy）","weight":1,"link":"/tags/工厂-代理模式（proxy）/"},{"text":"社会语录/网抑云热评api","weight":1,"link":"/tags/社会语录-网抑云热评api/"},{"text":"JS获取当前页面URL","weight":1,"link":"/tags/JS获取当前页面URL/"},{"text":"浏览器地址栏输入url发生的事","weight":1,"link":"/tags/浏览器地址栏输入url发生的事/"},{"text":"防抖/节流/懒/预加载/CDN","weight":1,"link":"/tags/防抖-节流-懒-预加载-CDN/"},{"text":"React初识","weight":1,"link":"/tags/React初识/"},{"text":"Vue初识","weight":1,"link":"/tags/Vue初识/"},{"text":"React生命周期","weight":1,"link":"/tags/React生命周期/"},{"text":"Olympus奥林巴斯相机","weight":1,"link":"/tags/Olympus奥林巴斯相机/"}], {
+        autoResize: true
+    });
+</script>
+
+    
+
+</main>
+
+
+    <style>
+    .youpaiyunlogo {
+        height: 26px;
+        display: inline-block;
+        vertical-align: top;
+    }
+</style>
+<footer class="page-footer bg-color">
+    
+        <link rel="stylesheet" href="../libs/aplayer/APlayer.min.css">
+<style>
+    .aplayer .aplayer-lrc p {
+        
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 16px !important;
+    }
+
+    .aplayer .aplayer-lrc p.aplayer-lrc-current {
+        
+        font-size: 15px;
+        color: #42b983;
+    }
+
+    
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
+        left: -66px !important;
+    }
+
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {
+        left: 0px !important;
+    }
+
+    
+</style>
+<div class="">
+    
+    <div class="row">
+        <meting-js class="hidess col l8 offset-l2 m10 offset-m1 s12" server="netease" type="playlist" id="3155294100" fixed='true' autoplay='false' theme='#42b983' loop='all' order='list' preload='auto' volume='0.7' list-folded='true'>
+        </meting-js>
+        <style>
+            .hidess .aplayer-lrc {
+                display: none!important;
+            }
+        </style>
+    </div>
+</div>
+
+<script src="../libs/aplayer/APlayer.min.js"></script>
+<script src="../npm/meting@2/dist/Meting.min.js"></script>
+
+    
+    <div class="container row center-align" style="margin-bottom: 15px !important;">
+        <!-- 访客地图 -->
+        <div class="col s12 m3 l3 social-link" id="visitmap">
+            <a target="_blank" rel="noopener" href="javascript:;" title="访客地图"><img src="https://clustrmaps.com/map_v2.png?cl=ffffff&w=300&t=n&d=JSX4QImR_CbfKkKdutTHIpP3sfxcCP34C8RWeldK8mk&co=000000&ct=ffffff"></a>
+        </div>
+        
+        <!-- 版权信息 -->
+        <div class="col s12 m6 l6 copy-right">
+            Copyright&nbsp;&copy;
+            <span id="year">2019</span>
+            <a href="../about/index.html" target="_blank">frank_lee</a>
+            &nbsp;Powered by&nbsp;<a href="javascript:;" target="_blank">Hexo</a>
+            &nbsp;Theme&nbsp;<a href="javascript:;" target="_blank">Matery</a>
+            <br>
+            
+            <a>Cloud storage</a> service and <a>CDN</a> acceleration provider
+            <a href="javascript:;" target="_blank" title="本站CDN加速/云存储由又拍云提供">
+                <img src="../medias/youpaiyun-logo.png" class="youpaiyunlogo">
+            </a>
+            
+            <br>
+            
+            &nbsp;<i class="fas fa-chart-area"></i>&nbsp;Total number of words: &nbsp;<span class="white-color">65.2k</span>&nbsp;
+            
+            
+            
+            
+            
+            
+            <span id="busuanzi_container_site_pv">
+                &nbsp;<i class="far"></i>&nbsp;Total visits: &nbsp;<span id="busuanzi_value_site_pv" class="white-color"></span>&nbsp;
+            </span>
+            
+            
+            <br>
+            
+            <span id="sitetime">running time</span>
+            <script>
+                function siteTime() {
+                    var seconds = 1000;
+                    var minutes = seconds * 60;
+                    var hours = minutes * 60;
+                    var days = hours * 24;
+                    var years = days * 365;
+                    var today = new Date();
+                    var startYear = "2019";
+                    var startMonth = "6";
+                    var startDate = "28";
+                    var startHour = "0";
+                    var startMinute = "0";
+                    var startSecond = "0";
+                    var todayYear = today.getFullYear();
+                    var todayMonth = today.getMonth() + 1;
+                    var todayDate = today.getDate();
+                    var todayHour = today.getHours();
+                    var todayMinute = today.getMinutes();
+                    var todaySecond = today.getSeconds();
+                    var t1 = Date.UTC(startYear, startMonth, startDate, startHour, startMinute, startSecond);
+                    var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
+                    var diff = t2 - t1;
+                    var diffYears = Math.floor(diff / years);
+                    var diffDays = Math.floor((diff / days) - diffYears * 365);
+                    var diffHours = Math.floor((diff - (diffYears * 365 + diffDays) * days) / hours);
+                    var diffMinutes = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours) /
+                        minutes);
+                    var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours -
+                        diffMinutes * minutes) / seconds);
+                    if (startYear == todayYear) {
+                        document.getElementById("year").innerHTML = todayYear;
+                        document.getElementById("sitetime").innerHTML = "The site has been running for " + "<span class= 'white-color'>"+diffDays+"</span>" + " d " + "<span class= 'white-color'>"+diffHours+"</span>" +
+                            " h " + "<span class= 'white-color'>"+diffMinutes+"</span>" + " m " + "<span class= 'white-color'>"+diffSeconds+"</span>" + " s";
+                    } else {
+                        document.getElementById("year").innerHTML = startYear + " - " + todayYear;
+                        document.getElementById("sitetime").innerHTML = "The site has been running for " + "<span class= 'white-color'>"+diffYears+"</span>" + " y " + "<span class= 'white-color'>"+diffDays+"</span>" +
+                            " d " + "<span class= 'white-color'>"+diffHours+"</span>" + " h " + "<span class= 'white-color'>"+diffMinutes+"</span>" + " m " +"<span class= 'white-color'>"+ diffSeconds+"</span>" + " s";
+                    }
+                }
+                setInterval(siteTime, 1000);
+            </script>
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m3 l3 social-link social-statis">
+    <a href="javascript:;" class="tooltipped" target="_blank" data-tooltip="GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:mailto:dyfeliwa@gmail.com" class="tooltipped" target="_blank" data-tooltip="邮件" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+    <a href="javascript:;" class="tooltipped" target="_blank" data-tooltip="QQ 2536194075" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+</div>
+    </div>
+    
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字" class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="../js/search.js"></script>
+<script type="text/javascript">
+$(function () {
+    searchFunc("/search.xml", 'searchInput', 'searchResult');
+});
+</script>
+
+    
+<!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="javascript:;">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+
+
+
+    <script src="../libs/materialize/materialize.min.js"></script>
+    <script src="../libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="../libs/aos/aos.js"></script>
+    <script src="../libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="../libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="../js/matery.js"></script>
+    
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    
+    <script async="" src="../libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <script src="../libs/instantpage/instantpage.js" type="module"></script>
+    
+
+    <!--动态线条背景-->
+    <script type="text/javascript" color="122 103 238" opacity='0.7' zindex="-2" count="200" src="../canvas-nest.js/1.0.0/canvas-nest.min.js">
+    </script>
+ 
+    <script type="text/javascript" src="../js/click_show_text.js"></script>
+    <script src="../js/linkcard.js"></script>
+
+    <script src="../js/activate-power-mode.js"></script>
+    <script>
+        POWERMODE.colorful = true; // make power mode colorful
+        POWERMODE.shake = false; // turn off shake
+        document.body.addEventListener('input', POWERMODE);
+    </script>
+</body>
+</html>
